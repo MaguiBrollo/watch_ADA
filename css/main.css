@@ -20,19 +20,13 @@ body {
 
 /*===================================================================*/
 /*--------------------- << _fonts: Fuentes >> -----------------------*/
-@font-face {
-  font-family: "Montserrat";
-  src: url("../../fonts/Montserrat-VariableFont_wght.ttf");
-  font-weight: 500;
-  font-style: italic;
-}
-.lora-i-n, main .section-categ div .categ-tit-img h2, main .cont-main section div h2, .tamanio-frase, footer h3, header nav .nav-container, header .cont-titulo .titulo-ada h1 {
+.lora-i-n, .section-categ div .categ-tit-img h2, main .cont-main section div h2, .tamanio-frase, footer h3, header nav .nav-container, header .cont-titulo .titulo-ada h1 {
   font-family: "Lora";
   font-style: italic;
   font-weight: normal;
 }
 
-.montserrat-n-n, main .section-categ div .categ-form-CRUD form .div-form button, body {
+.montserrat-n-n, .section-categ div .categ-form-CRUD form .div-form button, body {
   font-family: "Montserrat";
   font-weight: 500;
   font-style: normal;
@@ -247,7 +241,7 @@ main {
   min-height: calc(100% - 80px - 80px);
   display: flex;
   justify-content: center;
-  /* ---------------------------------------------------- */
+  /*Categorías-> pages/category.scss*/
 }
 main .cont-main {
   color: var(--colFuente);
@@ -274,7 +268,9 @@ main .cont-main section div .img-balance {
 main .cont-main section div .img-reporte {
   width: 70%;
 }
-main .section-categ {
+
+/* ---------------------------------------------------- */
+.section-categ {
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -282,44 +278,44 @@ main .section-categ {
   box-shadow: 8px 8px 5px -8px rgb(164, 163, 163);
   width: 90;
 }
-main .section-categ div {
+.section-categ div {
   display: flex;
   flex-direction: column;
 }
-main .section-categ div .categ-tit-img {
+.section-categ div .categ-tit-img {
   width: 100%;
   display: flex;
   flex-direction: row;
 }
-main .section-categ div .categ-tit-img h2 {
+.section-categ div .categ-tit-img h2 {
   font-size: 2rem;
   width: 85%;
 }
-main .section-categ div .categ-tit-img img {
+.section-categ div .categ-tit-img img {
   width: 10%;
 }
-main .section-categ div .categ-form-CRUD {
+.section-categ div .categ-form-CRUD {
   display: flex;
   flex-direction: column;
   width: 70%;
 }
-main .section-categ div .categ-form-CRUD form {
+.section-categ div .categ-form-CRUD form {
   width: 100%;
   margin: 10px;
 }
-main .section-categ div .categ-form-CRUD form .div-form {
+.section-categ div .categ-form-CRUD form .div-form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 5px 20px;
   border: 5px double var(--colSec);
 }
-main .section-categ div .categ-form-CRUD form .div-form .input {
+.section-categ div .categ-form-CRUD form .div-form .input {
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
-main .section-categ div .categ-form-CRUD form .div-form button {
+.section-categ div .categ-form-CRUD form .div-form button {
   margin: 0px 5px;
   padding: 5px;
   border-radius: 5px;
@@ -329,41 +325,41 @@ main .section-categ div .categ-form-CRUD form .div-form button {
   justify-content: center;
   border: none;
 }
-main .section-categ div .categ-tabla {
+.section-categ div .categ-tabla {
   width: 100%;
   border: 5px double var(--colSec);
 }
-main .section-categ div .categ-tabla .categ-tabla-titulo {
+.section-categ div .categ-tabla .categ-tabla-titulo {
   width: 100%;
   border-bottom: 1px solid var(--colSec);
   display: flex;
   flex-direction: row;
 }
-main .section-categ div .categ-tabla .categ-tabla-titulo .categ-nombre {
+.section-categ div .categ-tabla .categ-tabla-titulo .categ-nombre {
   display: flex;
   justify-content: center;
   width: 70%;
 }
-main .section-categ div .categ-tabla .categ-tabla-titulo .categ-acciones {
+.section-categ div .categ-tabla .categ-tabla-titulo .categ-acciones {
   display: flex;
   justify-content: center;
   width: 30%;
   border-left: 1px solid var(--colSec);
 }
-main .section-categ div .categ-tabla .categ-tabla-listado {
+.section-categ div .categ-tabla .categ-tabla-listado {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
 }
-main .section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-nombres {
+.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-nombres {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   padding-left: 15px;
   width: 70%;
 }
-main .section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-iconos {
+.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-iconos {
   display: flex;
   flex-direction: row;
   justify-content: center;
