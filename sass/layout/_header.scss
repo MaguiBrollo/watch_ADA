@@ -1,0 +1,95 @@
+/*====================================================================*/
+/*-------------------------- << HEADER  >> ---------------------------*/
+header {
+	width: 100%;
+	height: 80px;
+	background-color: var(--colSec);
+	padding: 0px 10px;
+	@include flex-dir-al-jus(flex, x, x, x);
+
+	.cont-titulo {
+		color: var(--colFuente);
+		width: 100%;
+		@include flex-dir-al-jus(flex, row, x, x);
+
+		.titulo-ada {
+			width: 50%;
+
+			font-size: 2rem;
+			@include flex-dir-al-jus(flex, row, center, x);
+
+			h1 {
+				margin-left: 10px;
+				font-size: 2rem;
+
+				@extend .lora-i-n; //fonts.scss
+				color: var(--colTituloPpal);
+			}
+		}
+		.btn-menu-hamb {
+			width: 50%;
+			display: flex;
+			@include flex-dir-al-jus(flex, row, center, flex-end);
+
+			&__cerrar {
+				display: none;
+			}
+		}
+	}
+
+	nav {
+		width: 100%;
+		@include flex-dir-al-jus(none, x, x, flex-end);
+
+		.nav-container {
+			@include flex-dir-al-jus(flex, column, center, x);
+			@extend .lora-i-n; //fonts.scss
+			a {
+				@include boton(var(--colPpal), 100px, true);
+				text-decoration: none;
+				color: var(--colFuente);
+				font-size: 0.9rem;
+				i {
+					padding-right: 5px;
+					@include flex-dir-al-jus(flex, x, center, center);
+
+				}
+			}
+
+			a:last-child {
+				@include boton(var(--colPpal), 40px, true);
+				padding-right: 0px;
+				height: 27px;
+			}
+			a:hover {
+				background-color: var(--colHoverBtn);
+			}
+			a:last-child:hover {
+				background-color: var(--colPpal);
+			}
+		}
+	}
+
+	@media (min-width: #{$md}) {
+		.cont-titulo {
+			width: 25%;
+
+			.titulo-ada {
+				font-size: 2.4rem;
+				h1 {
+					font-size: 2.4rem;
+				}
+			}
+			.btn-menu-hamb {
+				display: none;
+			}
+		}
+		nav {
+			width: 75%;
+			display: flex;
+			.nav-container {
+				@include flex-dir-al-jus(flex, row, x, x);
+			}
+		}
+	}
+}

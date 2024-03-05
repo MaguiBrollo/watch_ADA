@@ -1,0 +1,35 @@
+/*====================================================================*/
+/*--------------- << _variables: Variables globales >> ---------------*/
+
+:root {
+	/* Modo claro*/
+	--colPpal: #cddbff;
+	--colSec: #9aade5;
+	--colTer: #f2f9ff;
+	--colHoverBtn: #f2f9ff;
+	--colFondoMain: rgb(232, 241, 255);
+	--colFuente: #111827; /*  gray 900*/
+	--colTituloPpal: #fcc656;
+
+	color-scheme: light; /*color por defecto de win, para barras de scroll*/
+
+	--transition: color 0.1s, background-color 0.2s ease-in-out;
+}
+
+:root[data-theme-color="dark"] {
+	/* Modo oscuro*/
+	--colSec: #1f2937; /*grey  800 */
+	--colPpal: #575d66; /* ERA grey 700 cambié */
+	--colTer: #4b5563; /*grey  600 */
+	--colHoverBtn: #6b7280; /*grey  500 */
+	--colFondoMain: #9ca3af; /*grey  400 */
+	--colFuente: #f4f4f5; /*  gray 100*/
+	--colTituloPpal: #fcc656;
+
+	color-scheme: dark; /*color por defecto de win, para barras de scroll*/
+}
+
+
+$sm: "576px"; // => @media (min-width: 576px) { ... }
+$md: "768px"; // => @media (min-width: 768px) { ... }
+$lg: "1024px"; // => @media (min-width: 1440px) { ... }

@@ -1,0 +1,375 @@
+@charset "UTF-8";
+/* main.scss*/
+/* @import  */
+/*=====================================================================*/
+/*------------------- << _reset: Estilos Básicos >> -------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  transition: var(--transition);
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%; /* 100% del padre, que es el html*/
+}
+
+/*===================================================================*/
+/*--------------------- << _fonts: Fuentes >> -----------------------*/
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../fonts/Montserrat-VariableFont_wght.ttf");
+  font-weight: 500;
+  font-style: italic;
+}
+.lora-i-n, main .section-categ div .categ-tit-img h2, main .cont-main section div h2, .tamanio-frase, footer h3, header nav .nav-container, header .cont-titulo .titulo-ada h1 {
+  font-family: "Lora";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.montserrat-n-n, main .section-categ div .categ-form-CRUD form .div-form button, body {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-style: normal;
+}
+
+/*====================================================================*/
+/*--------------- << _variables: Variables globales >> ---------------*/
+:root {
+  /* Modo claro*/
+  --colPpal: #cddbff;
+  --colSec: #9aade5;
+  --colTer: #f2f9ff;
+  --colHoverBtn: #f2f9ff;
+  --colFondoMain: rgb(232, 241, 255);
+  --colFuente: #111827; /*  gray 900*/
+  --colTituloPpal: #fcc656;
+  color-scheme: light; /*color por defecto de win, para barras de scroll*/
+  --transition: color 0.1s, background-color 0.2s ease-in-out;
+}
+
+:root[data-theme-color=dark] {
+  /* Modo oscuro*/
+  --colSec: #1f2937; /*grey  800 */
+  --colPpal: #575d66; /* ERA grey 700 cambié */
+  --colTer: #4b5563; /*grey  600 */
+  --colHoverBtn: #6b7280; /*grey  500 */
+  --colFondoMain: #9ca3af; /*grey  400 */
+  --colFuente: #f4f4f5; /*  gray 100*/
+  --colTituloPpal: #fcc656;
+  color-scheme: dark; /*color por defecto de win, para barras de scroll*/
+}
+
+/*====================================================================*/
+/*-------------------------- << MIXINS  >> ---------------------------*/
+/*====================================================================*/
+/*-------------------------- << HEADER  >> ---------------------------*/
+header {
+  width: 100%;
+  height: 80px;
+  background-color: var(--colSec);
+  padding: 0px 10px;
+  display: flex;
+}
+header .cont-titulo {
+  color: var(--colFuente);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+header .cont-titulo .titulo-ada {
+  width: 50%;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header .cont-titulo .titulo-ada h1 {
+  margin-left: 10px;
+  font-size: 2rem;
+  color: var(--colTituloPpal);
+}
+header .cont-titulo .btn-menu-hamb {
+  width: 50%;
+  display: flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+header .cont-titulo .btn-menu-hamb__cerrar {
+  display: none;
+}
+header nav {
+  width: 100%;
+  display: none;
+  justify-content: flex-end;
+}
+header nav .nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header nav .nav-container a {
+  margin: 0px 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--colPpal);
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  box-shadow: 5px 5px 5px -3px rgb(140, 136, 136);
+  text-decoration: none;
+  color: var(--colFuente);
+  font-size: 0.9rem;
+}
+header nav .nav-container a i {
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header nav .nav-container a:last-child {
+  margin: 0px 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--colPpal);
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  box-shadow: 5px 5px 5px -3px rgb(140, 136, 136);
+  padding-right: 0px;
+  height: 27px;
+}
+header nav .nav-container a:hover {
+  background-color: var(--colHoverBtn);
+}
+header nav .nav-container a:last-child:hover {
+  background-color: var(--colPpal);
+}
+@media (min-width: 768px) {
+  header .cont-titulo {
+    width: 25%;
+  }
+  header .cont-titulo .titulo-ada {
+    font-size: 2.4rem;
+  }
+  header .cont-titulo .titulo-ada h1 {
+    font-size: 2.4rem;
+  }
+  header .cont-titulo .btn-menu-hamb {
+    display: none;
+  }
+  header nav {
+    width: 75%;
+    display: flex;
+  }
+  header nav .nav-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/*====================================================================*/
+/*-------------------------  << FOOTER  >> ---------------------------*/
+.color-fuente, footer h3, footer nav .nav-cont a {
+  color: var(--colFuente);
+  font-size: 1.1rem;
+}
+
+footer {
+  width: 100%;
+  height: 80px;
+  background-color: var(--colSec);
+  text-align: center;
+}
+footer nav .nav-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+footer nav .nav-cont a {
+  width: 60px;
+  margin: 10px 0px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+footer nav .nav-cont a i {
+  color: var(--colFuente);
+  background-color: var(--colSec);
+  width: 1.8rem;
+  height: 1.8rem;
+  font-size: 1.2rem;
+  border: 1px solid var(--colFuente);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+footer nav .nav-cont a i:hover {
+  color: var(--colSec);
+  background-color: var(--colFuente);
+}
+footer h3 span {
+  font-size: 1rem;
+}
+
+/*====================================================================*/
+/*--------------------------  << HOME  >>  ---------------------------*/
+body {
+  background-color: var(--colFondoMain);
+  min-height: 100%;
+  font-family: "Montserrat";
+}
+
+.ocultar {
+  display: none;
+}
+
+.tamanio-frase {
+  font-size: clamp(1rem, -0.0698rem + 3.0387vw, 1.875rem);
+  line-height: 2.25rem;
+}
+
+main {
+  min-height: calc(100% - 80px - 80px);
+  display: flex;
+  justify-content: center;
+  /* ---------------------------------------------------- */
+}
+main .cont-main {
+  color: var(--colFuente);
+  width: 100%;
+  max-width: 992px;
+}
+main .cont-main section {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .cont-main section div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .cont-main section div .img-inicio {
+  width: 80%;
+}
+main .cont-main section div .img-balance {
+  width: 50%;
+}
+main .cont-main section div .img-reporte {
+  width: 70%;
+}
+main .section-categ {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--colPpal);
+  box-shadow: 8px 8px 5px -8px rgb(164, 163, 163);
+  width: 90;
+}
+main .section-categ div {
+  display: flex;
+  flex-direction: column;
+}
+main .section-categ div .categ-tit-img {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+main .section-categ div .categ-tit-img h2 {
+  font-size: 2rem;
+  width: 85%;
+}
+main .section-categ div .categ-tit-img img {
+  width: 10%;
+}
+main .section-categ div .categ-form-CRUD {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+main .section-categ div .categ-form-CRUD form {
+  width: 100%;
+  margin: 10px;
+}
+main .section-categ div .categ-form-CRUD form .div-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 20px;
+  border: 5px double var(--colSec);
+}
+main .section-categ div .categ-form-CRUD form .div-form .input {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+main .section-categ div .categ-form-CRUD form .div-form button {
+  margin: 0px 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--colFondoMain);
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+main .section-categ div .categ-tabla {
+  width: 100%;
+  border: 5px double var(--colSec);
+}
+main .section-categ div .categ-tabla .categ-tabla-titulo {
+  width: 100%;
+  border-bottom: 1px solid var(--colSec);
+  display: flex;
+  flex-direction: row;
+}
+main .section-categ div .categ-tabla .categ-tabla-titulo .categ-nombre {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+main .section-categ div .categ-tabla .categ-tabla-titulo .categ-acciones {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  border-left: 1px solid var(--colSec);
+}
+main .section-categ div .categ-tabla .categ-tabla-listado {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+main .section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-nombres {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-left: 15px;
+  width: 70%;
+}
+main .section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-iconos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 30%;
+  gap: 20px;
+  border-left: 1px solid var(--colSec);
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,131 @@
+/*====================================================================*/
+/*--------------------------  << HOME  >>  ---------------------------*/
+body {
+	background-color: var(--colFondoMain);
+	min-height: 100%;
+	font-family: "Montserrat";
+	@extend .montserrat-n-n; //_fonts.scss
+}
+
+.ocultar {
+	display: none;
+}
+
+.tamanio-frase {
+	font-size: clamp(1rem, -0.0698rem + 3.0387vw, 1.875rem);
+	line-height: 2.25rem;
+	@extend .lora-i-n; //_fonts.scss
+}
+
+main {
+	min-height: calc(100% - 80px - 80px);
+	display: flex;
+	justify-content: center;
+
+	.cont-main {
+		color: var(--colFuente);
+		width: 100%;
+		max-width: 992px;
+
+		section {
+			@include flex-dir-al-jus(x, column, center, center);
+			div {
+				@include flex-dir-al-jus(flex, column, center, center);
+				h2 {
+					@extend .lora-i-n; //fonts.scss
+				}
+				.img-inicio {
+					width: 80%;
+				}
+				.img-balance {
+					width: 50%;
+				}
+				.img-reporte {
+					width: 70%;
+				}
+			}
+		}
+	}
+
+	/* ---------------------------------------------------- */
+	.section-categ {
+		@include caja(var(--colPpal), 90);
+		div {
+			@include flex-dir-al-jus(flex, column, x, x);
+
+			.categ-tit-img {
+				width: 100%;
+				@include flex-dir-al-jus(flex, row, x, x);
+				h2 {
+					@extend .lora-i-n; //fonts.scss
+					font-size: 2rem;
+					width: 85%;
+				}
+				img {
+					width: 10%;
+				}
+			}
+
+			.categ-form-CRUD {
+				@include flex-dir-al-jus(flex, column, x, x);
+				width: 70%;
+				form {
+					width: 100%;
+					margin: 10px;
+					.div-form {
+						@include flex-dir-al-jus(flex, row, x, space-between);
+						padding: 5px 20px;
+						border: 5px double var(--colSec);
+
+						.input {
+							@include flex-dir-al-jus(flex, row, x, x);
+							gap: 10px;
+						}
+
+						button {
+							@extend .montserrat-n-n; //_fonts.scss
+							@include boton(var(--colFondoMain), 80px, false);
+						}
+					}
+				}
+			}
+
+			.categ-tabla {
+				width: 100%;
+				border: 5px double var(--colSec);
+
+				.categ-tabla-titulo {
+					width: 100%;
+					border-bottom: 1px solid var(--colSec);
+					@include flex-dir-al-jus(flex, row, x, x);
+
+					.categ-nombre {
+						@include flex-dir-al-jus(flex, x, x, center);
+						width: 70%;
+					}
+
+					.categ-acciones {
+						@include flex-dir-al-jus(flex, x, x, center);
+						width: 30%;
+						border-left: 1px solid var(--colSec);
+					}
+				}
+				.categ-tabla-listado {
+					@include flex-dir-al-jus(flex, row, x, flex-start);
+					width: 100%;
+					.categ-tabla-nombres {
+						@include flex-dir-al-jus(flex, row, x, flex-start);
+						padding-left: 15px;
+						width: 70%;
+					}
+					.categ-tabla-iconos {
+						@include flex-dir-al-jus(flex, row, x, center);
+						width: 30%;
+						gap: 20px;
+						border-left: 1px solid var(--colSec);
+					}
+				}
+			}
+		}
+	}
+}
