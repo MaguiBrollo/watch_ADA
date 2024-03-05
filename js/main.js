@@ -64,7 +64,7 @@ const btn_claro_oscuro = document.getElementById("btn-claro-oscuro");
 const imagenes = document.getElementsByClassName("img-js");
 
 function ponerSacarGris(porc) {
-	for (let i = 0; imagenes.length; i++) {
+	for (let i = 0; i<imagenes.length; i++) {
 		imagenes[i].style.filter = `grayscale(${porc})`;
 	}
 }
