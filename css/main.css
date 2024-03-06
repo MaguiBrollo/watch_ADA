@@ -22,13 +22,13 @@ body {
 /*--------------------- << _fonts: Fuentes >> -----------------------*/
 @font-face {
   font-family: "Lora";
-  src: url("../../fonts/Lora-Italic-VariableFont_wght.ttf");
+  src: url("../fonts/Lora-Italic-VariableFont_wght.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../../fonts/Montserrat-VariableFont_wght.ttf");
+  src: url("../fonts/Montserrat-VariableFont_wght.ttf");
   font-weight: 500;
   font-style: italic;
 }
@@ -103,12 +103,34 @@ header .cont-titulo .titulo-ada h1 {
 header .cont-titulo .btn-menu-hamb {
   width: 50%;
   display: flex;
-  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  border: none;
+}
+header .cont-titulo .btn-menu-hamb__abrir {
+  margin: 0px 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--colPpal);
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  box-shadow: 5px 5px 5px -3px rgb(140, 136, 136);
+  cursor: pointer;
 }
 header .cont-titulo .btn-menu-hamb__cerrar {
+  margin: 0px 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--colPpal);
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  box-shadow: 5px 5px 5px -3px rgb(140, 136, 136);
+  cursor: pointer;
   display: none;
 }
 header nav {
@@ -122,11 +144,14 @@ header nav .nav-container {
   align-items: center;
 }
 header nav .nav-container a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   margin: 0px 5px;
   padding: 5px;
   border-radius: 5px;
   background-color: var(--colPpal);
-  width: 100px;
+  width: 105px;
   display: flex;
   justify-content: center;
   border: none;
@@ -135,11 +160,8 @@ header nav .nav-container a {
   color: var(--colFuente);
   font-size: 0.9rem;
 }
-header nav .nav-container a i {
+header nav .nav-container a span {
   padding-right: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 header nav .nav-container a:last-child {
   margin: 0px 5px;
@@ -152,7 +174,7 @@ header nav .nav-container a:last-child {
   border: none;
   box-shadow: 5px 5px 5px -3px rgb(140, 136, 136);
   padding-right: 0px;
-  height: 27px;
+  height: 33px;
 }
 header nav .nav-container a:hover {
   background-color: var(--colHoverBtn);
@@ -333,7 +355,7 @@ main .cont-main section div .img-reporte {
   padding: 5px;
   border-radius: 5px;
   background-color: var(--colFondoMain);
-  width: 80px;
+  width: 40px;
   display: flex;
   justify-content: center;
   border: none;
@@ -345,6 +367,7 @@ main .cont-main section div .img-reporte {
 }
 .section-categ div .categ-tabla .categ-tabla-titulo {
   width: 100%;
+  height: 25px;
   border-bottom: 1px solid var(--colSec);
   display: flex;
   flex-direction: row;
@@ -362,18 +385,24 @@ main .cont-main section div .img-reporte {
 }
 .section-categ div .categ-tabla .categ-tabla-listado {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
+  min-height: 45vh;
+  overflow-y: auto;
   width: 100%;
 }
-.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-nombres {
+.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-fila {
   display: flex;
   flex-direction: row;
+  width: 100%;
+}
+.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-nombres {
+  display: flex;
   justify-content: flex-start;
   padding-left: 15px;
   width: 70%;
 }
-.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-iconos {
+.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos {
   display: flex;
   flex-direction: row;
   justify-content: center;

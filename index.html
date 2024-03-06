@@ -6,7 +6,13 @@
 		<title>Practicando SASS</title>
 		<link rel="icon" href="img/ahorrosM_ico.ico" type="image/png" />
 
-		<!-- STYLE para los iconos  -->
+		<!-- Iconos de google para todo, menos para el FOOTER -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
+
+		<!-- STYLE para los iconos del FOOTTER -->
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -30,36 +36,36 @@
 				<!-- Menú hamb -->
 				<div class="btn-menu-hamb">
 					<button class="btn-menu-hamb__abrir" id="abrir">
-						<i class="fa fa-bars" aria-hidden="true"></i>
+						<span class="material-symbols-outlined">menu</span>
 					</button>
 
 					<button class="btn-menu-hamb__cerrar" id="cerrar">
-						<i class="fa fa-times-circle" aria-hidden="true"></i>
+						<span class="material-symbols-outlined"> close </span>
 					</button>
 				</div>
 			</div>
 			<nav id="nav-header">
 				<div class="nav-container">
 					<a tabindex="0" href="#" id="menu-inicio">
-						<i class="fa-solid fa-house"></i>
+						<span class="material-symbols-outlined"> home </span>
 						Inicio
 					</a>
 					<a tabindex="0" href="#" id="menu-balance">
-						<i class="fa-solid fa-chart-line"></i>
+						<span class="material-symbols-outlined"> add_chart </span>
 						Balance
 					</a>
 
 					<a tabindex="0" href="#" id="menu-categorias">
-						<i class="fa-solid fa-list"></i>
+						<span class="material-symbols-outlined"> list_alt_add </span>
 						Categorías
 					</a>
 
 					<a tabindex="0" href="#" id="menu-reportes">
-						<i class="fa-solid fa-chart-pie"></i>
+						<span class="material-symbols-outlined"> insert_chart </span>
 						Reportes
 					</a>
 					<a tabindex="0" href="#" id="btn-claro-oscuro">
-						<i class="fa-solid fa-moon"></i>
+						<span class="material-symbols-outlined"> dark_mode </span>
 					</a>
 				</div>
 			</nav>
@@ -115,7 +121,7 @@
 						</div>
 
 						<div class="categ-form-CRUD">
-							<form action="" method="POST">
+							<form method="POST">
 								<div class="div-form">
 									<div class="input">
 										<label for="categ_nombre">Nombre:</label>
@@ -124,26 +130,27 @@
 											id="categ_nombre"
 											placeholder="Nombre"
 											maxlength="20"
-											
 											name="categ_nombre"
 										/>
 									</div>
-									<button id="categ-agregar">Agregar</button>
+									<button id="categ-agregar">
+										<span class="material-symbols-outlined"> add_box </span>
+									</button>
 								</div>
 							</form>
 							<div class="categ-tabla">
 								<div class="categ-tabla-titulo">
-									<p class="categ-nombre">Nombre</p>
-									<p class="categ-acciones">Acciones</p>
+									<p class="categ-nombre">CATEGORÍA NOMBRE</p>
+									<p class="categ-acciones">ACCIONES</p>
 								</div>
-								<div class="categ-tabla-listado" id="categ-tabla-listado">
-									<div class="categ-tabla-nombres">DESCRIPCIÓN</div>
-									<div class="categ-tabla-iconos">
-										<i class="fa-solid fa-pen-to-square"></i>
-										<i class="fa-solid fa-trash-can"></i>
-									</div>
 
-									<!-- completar con los datos de la DBF -->
+								<div class="categ-tabla-listado" id="categ-tabla-listado">
+									<!-- Se completa con los datos de la DBF. Ver categorias.js-->
+									<!-- <div class="categ-tabla-fila">
+										div nombre 
+										div iconos
+									</div>
+									 -->
 								</div>
 							</div>
 						</div>

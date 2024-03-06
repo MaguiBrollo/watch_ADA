@@ -28,10 +28,16 @@ header {
 		}
 		.btn-menu-hamb {
 			width: 50%;
-			display: flex;
 			@include flex-dir-al-jus(flex, row, center, flex-end);
-
+			border: none;
+			&__abrir {
+				@include boton(var(--colPpal), 35px, true);
+				cursor: pointer;
+			}
 			&__cerrar {
+
+				@include boton(var(--colPpal), 35px, true);
+				cursor: pointer;
 				display: none;
 			}
 		}
@@ -45,21 +51,20 @@ header {
 			@include flex-dir-al-jus(flex, column, center, x);
 			@extend .lora-i-n; //fonts.scss
 			a {
-				@include boton(var(--colPpal), 100px, true);
+				@include flex-dir-al-jus(flex, row, center, x);
+				@include boton(var(--colPpal), 105px, true);
 				text-decoration: none;
 				color: var(--colFuente);
 				font-size: 0.9rem;
-				i {
+				span {
 					padding-right: 5px;
-					@include flex-dir-al-jus(flex, x, center, center);
-
 				}
 			}
 
 			a:last-child {
 				@include boton(var(--colPpal), 40px, true);
 				padding-right: 0px;
-				height: 27px;
+				height: 33px;
 			}
 			a:hover {
 				background-color: var(--colHoverBtn);

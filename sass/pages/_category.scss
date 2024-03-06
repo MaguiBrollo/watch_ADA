@@ -36,7 +36,7 @@
 
 					button {
 						@extend .montserrat-n-n; //_fonts.scss
-						@include boton(var(--colFondoMain), 80px, false);
+						@include boton(var(--colFondoMain), 40px, false);
 						cursor: pointer;
 					}
 				}
@@ -49,6 +49,7 @@
 
 			.categ-tabla-titulo {
 				width: 100%;
+				height: 25px;
 				border-bottom: 1px solid var(--colSec);
 				@include flex-dir-al-jus(flex, row, x, x);
 
@@ -64,18 +65,25 @@
 				}
 			}
 			.categ-tabla-listado {
-				@include flex-dir-al-jus(flex, row, x, flex-start);
+				@include flex-dir-al-jus(flex, column, x, flex-start);
+				min-height: 45vh;
+				overflow-y: auto;
 				width: 100%;
-				.categ-tabla-nombres {
-					@include flex-dir-al-jus(flex, row, x, flex-start);
-					padding-left: 15px;
-					width: 70%;
-				}
-				.categ-tabla-iconos {
-					@include flex-dir-al-jus(flex, row, x, center);
-					width: 30%;
-					gap: 20px;
-					border-left: 1px solid var(--colSec);
+
+				.categ-tabla-fila {
+					@include flex-dir-al-jus(flex, row, x, x);
+					width: 100%;
+					.categ-tabla-nombres {
+						@include flex-dir-al-jus(flex, x, x, flex-start);
+						padding-left: 15px;
+						width: 70%;
+					}
+					.categ-tabla-iconos {
+						@include flex-dir-al-jus(flex, row, x, center);
+						width: 30%;
+						gap: 20px;
+						border-left: 1px solid var(--colSec);
+					}
 				}
 			}
 		}
@@ -93,7 +101,7 @@
 		div {
 			font-size: 1rem;
 			.categ-form-CRUD {
-				width:80%;
+				width: 80%;
 			}
 		}
 	}
