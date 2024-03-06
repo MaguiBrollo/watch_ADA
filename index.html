@@ -16,7 +16,6 @@
 		/>
 
 		<!-- MIS ESTILOS, DEBEN IR ÚLTIMO -->
-		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="css/main.css" />
 	</head>
 
@@ -116,7 +115,7 @@
 						</div>
 
 						<div class="categ-form-CRUD">
-							<form action="">
+							<form action="" method="POST">
 								<div class="div-form">
 									<div class="input">
 										<label for="categ_nombre">Nombre:</label>
@@ -125,11 +124,11 @@
 											id="categ_nombre"
 											placeholder="Nombre"
 											maxlength="20"
-											size="50"
+											
 											name="categ_nombre"
 										/>
 									</div>
-									<button type="submit" class="">Agregar</button>
+									<button id="categ-agregar">Agregar</button>
 								</div>
 							</form>
 							<div class="categ-tabla">
@@ -138,9 +137,7 @@
 									<p class="categ-acciones">Acciones</p>
 								</div>
 								<div class="categ-tabla-listado" id="categ-tabla-listado">
-									<div class="categ-tabla-nombres">
-										DESCRIPCIÓN 
-									</div>
+									<div class="categ-tabla-nombres">DESCRIPCIÓN</div>
 									<div class="categ-tabla-iconos">
 										<i class="fa-solid fa-pen-to-square"></i>
 										<i class="fa-solid fa-trash-can"></i>
@@ -199,4 +196,5 @@
 
 	<!-- JavaScript -->
 	<script src="js/main.js"></script>
+	<script src="js/categoria.js"></script>
 </html>

@@ -1,6 +1,19 @@
 /*===================================================================*/
 /*--------------------- << _fonts: Fuentes >> -----------------------*/
-// @font-face se encuentra en style.css, en la raiz del proyecto
+
+ @font-face {
+    font-family: 'Lora';
+    src: url("../../fonts/Lora-Italic-VariableFont_wght.ttf");
+    font-weight: normal;
+    font-style: normal;
+ }
+
+ @font-face {
+    font-family: "Montserrat";
+    src: url("../../fonts/Montserrat-VariableFont_wght.ttf");
+    font-weight: 500;
+    font-style: italic;
+ }
 
 .lora-i-n {
 	font-family: "Lora";

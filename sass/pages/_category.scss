@@ -2,6 +2,7 @@
 .section-categ {
 	@include caja(var(--colPpal), 90);
 	div {
+		font-size: 0.8rem;
 		@include flex-dir-al-jus(flex, column, x, x);
 
 		.categ-tit-img {
@@ -19,13 +20,13 @@
 
 		.categ-form-CRUD {
 			@include flex-dir-al-jus(flex, column, x, x);
-			width: 70%;
+			width: 100%;
 			form {
 				width: 100%;
 				margin: 10px;
 				.div-form {
 					@include flex-dir-al-jus(flex, row, x, space-between);
-					padding: 5px 20px;
+					padding: 5px;
 					border: 5px double var(--colSec);
 
 					.input {
@@ -36,6 +37,7 @@
 					button {
 						@extend .montserrat-n-n; //_fonts.scss
 						@include boton(var(--colFondoMain), 80px, false);
+						cursor: pointer;
 					}
 				}
 			}
@@ -75,6 +77,23 @@
 					gap: 20px;
 					border-left: 1px solid var(--colSec);
 				}
+			}
+		}
+	}
+
+	@media (min-width: #{$sm}) {
+		div {
+			font-size: 1rem;
+			.categ-form-CRUD {
+				width: 90%;
+			}
+		}
+	}
+	@media (min-width: #{$md}) {
+		div {
+			font-size: 1rem;
+			.categ-form-CRUD {
+				width:80%;
 			}
 		}
 	}
