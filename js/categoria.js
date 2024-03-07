@@ -17,37 +17,56 @@ function listarCategorias() {
 			mostrarCategorias(data);
 		})
 		.catch((error) => {
-			//atrapa error
-			console.log("ERROR de LISTAR Categorías: ", error);
+			console.log("ERROR - LISTAR Categorías: ", error);
 		});
 }
 
 //------------------------------------
 const categ_tabla_listado = document.getElementById("categ-tabla-listado");
 function mostrarCategorias(listCat) {
-	for (const cat of listCat) {
-		categ_tabla_listado.innerHTML += `
+	categ_tabla_listado.innerHTML = "";
+	if (listCat.length === 0) categ_tabla_listado.innerHTML += `¡Sin Categorías!`;
+	else {
+		for (const cat of listCat) {
+			categ_tabla_listado.innerHTML += `
 		<div class="categ-tabla-fila">
-				<div class="categ-tabla-nombres">${cat.nombre}</div>
+				<div class="categ-tabla-nombres">${cat.id}-${cat.nombre}</div>
 				<div class="categ-tabla-iconos">
-					<span class="material-symbols-outlined"> edit </span>
-					<span class="material-symbols-outlined"> delete </span>
+
+					<span class="material-symbols-outlined edi"> edit </span>
+					
+					<span onClick="borrarCategoria(${cat.id})" class="material-symbols-outlined del"> delete </span>
+					
 				</div>
 		</div>
 		`;
+		}
 	}
 }
+
+let borrarCategoria = async (idCat) => {
+	try {
+		const peticion = await fetch("http://localhost:8080/api_watch/" + idCat, {
+			method: "DELETE",
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/json; charset=utf-8",
+			},
+		});
+	} catch (error) {
+		console.log("ERROR - ELIMINAR Categoría: ", error); //para ver error
+	}
+	listarCategorias();
+};
 
 /* ============== NUEVA CATEGORIA ============= */
 const categ_agregar = document.getElementById("categ-agregar");
 
 categ_agregar.addEventListener("click", () => {
-	registrarCategoria();
-	console.log("paso el registrar");
-	listarCategorias(); //actualizar listado
+		registrarCategoria();
 });
 
-// Agrega una nueva categoría
+// Agrega una categoría
 let registrarCategoria = async () => {
 	let categoria = {};
 
@@ -58,23 +77,23 @@ let registrarCategoria = async () => {
 	try {
 		let peticion = await fetch("http://localhost:8080/api_watch/crear", {
 			method: "POST",
-			//mode: "no-cors",
 			headers: {
 				Accept: "application/json",
-				// Origin: "http://127.0.0.1:5500",
+
 				"Content-Type": "application/json; charset=utf-8",
 			},
 			body: JSON.stringify(categoria),
 		});
 	} catch (error) {
-		console.log("Error de CREAR categoría: ", error); //para ver error
+		console.log("ERROR - CREAR categoría: ", error); //para ver error
 	}
+	console.log("pasa por aquiiii")
+	listarCategorias(); //actualizar listado
 };
 
 /* ======================================================== */
 /* Funciones que deben ejecutarse al cargar menú Categorías */
+//(desde main.js)
 function funcionesCategorias() {
-	//la llaman desde main.js
-	console.log("entro");
 	listarCategorias();
 }

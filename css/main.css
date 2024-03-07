@@ -38,7 +38,7 @@ body {
   font-weight: normal;
 }
 
-.montserrat-n-n, .section-categ div .categ-form-CRUD form .div-form button, body {
+.montserrat-n-n, .section-categ div .categ-form-CRUD .form .div-form button, body {
   font-family: "Montserrat";
   font-weight: 500;
   font-style: normal;
@@ -50,11 +50,13 @@ body {
   /* Modo claro*/
   --colPpal: #cddbff;
   --colSec: #9aade5;
-  --colTer: #f2f9ff;
+  --colTer:#bfccf5;
   --colHoverBtn: #f2f9ff;
   --colFondoMain: rgb(232, 241, 255);
   --colFuente: #111827; /*  gray 900*/
   --colTituloPpal: #fcc656;
+  --colVerde: rgb(34, 100, 34);
+  --colRojo: rgb(178, 59, 59);
   color-scheme: light; /*color por defecto de win, para barras de scroll*/
   --transition: color 0.1s, background-color 0.2s ease-in-out;
 }
@@ -63,11 +65,13 @@ body {
   /* Modo oscuro*/
   --colSec: #1f2937; /*grey  800 */
   --colPpal: #575d66; /* ERA grey 700 cambié */
-  --colTer: #4b5563; /*grey  600 */
+  --colTer: #797e85; /* */
   --colHoverBtn: #6b7280; /*grey  500 */
   --colFondoMain: #9ca3af; /*grey  400 */
   --colFuente: #f4f4f5; /*  gray 100*/
   --colTituloPpal: #fcc656;
+  --colVerde: rgb(20, 54, 20);
+  --colRojo: rgb(58, 20, 20);
   color-scheme: dark; /*color por defecto de win, para barras de scroll*/
 }
 
@@ -308,7 +312,7 @@ main .cont-main section div .img-reporte {
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
-  background-color: var(--colPpal);
+  background-color: var(--colTer);
   box-shadow: 8px 8px 5px -8px rgb(164, 163, 163);
   width: 90;
 }
@@ -334,23 +338,24 @@ main .cont-main section div .img-reporte {
   flex-direction: column;
   width: 100%;
 }
-.section-categ div .categ-form-CRUD form {
+.section-categ div .categ-form-CRUD .form {
   width: 100%;
   margin: 10px;
 }
-.section-categ div .categ-form-CRUD form .div-form {
+.section-categ div .categ-form-CRUD .form .div-form {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 5px;
   border: 5px double var(--colSec);
 }
-.section-categ div .categ-form-CRUD form .div-form .input {
+.section-categ div .categ-form-CRUD .form .div-form .input {
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
-.section-categ div .categ-form-CRUD form .div-form button {
+.section-categ div .categ-form-CRUD .form .div-form button {
   margin: 0px 5px;
   padding: 5px;
   border-radius: 5px;
@@ -409,6 +414,17 @@ main .cont-main section div .img-reporte {
   width: 30%;
   gap: 20px;
   border-left: 1px solid var(--colSec);
+}
+.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos .edi {
+  color: var(--colVerde);
+  cursor: pointer;
+}
+.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos .del {
+  color: var(--colRojo);
+  cursor: pointer;
+}
+.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos .edi:hover, .section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos .del:hover {
+  filter: drop-shadow(16px 16px 20px var(--colSec)) invert(75%);
 }
 @media (min-width: 576px) {
   .section-categ div {

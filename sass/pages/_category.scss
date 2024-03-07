@@ -1,6 +1,6 @@
 /* ---------------------------------------------------- */
 .section-categ {
-	@include caja(var(--colPpal), 90);
+	@include caja(var(--colTer), 90);
 	div {
 		font-size: 0.8rem;
 		@include flex-dir-al-jus(flex, column, x, x);
@@ -21,10 +21,11 @@
 		.categ-form-CRUD {
 			@include flex-dir-al-jus(flex, column, x, x);
 			width: 100%;
-			form {
+			.form {
 				width: 100%;
 				margin: 10px;
 				.div-form {
+					width: 100%;
 					@include flex-dir-al-jus(flex, row, x, space-between);
 					padding: 5px;
 					border: 5px double var(--colSec);
@@ -83,6 +84,18 @@
 						width: 30%;
 						gap: 20px;
 						border-left: 1px solid var(--colSec);
+						.edi {
+							color: var(--colVerde);
+							cursor: pointer;
+						}
+						.del {
+							color: var(--colRojo);
+							cursor: pointer;
+						}
+
+						.edi:hover , .del:hover {
+							filter: drop-shadow(16px 16px 20px var(--colSec)) invert(75%);
+						}
 					}
 				}
 			}
