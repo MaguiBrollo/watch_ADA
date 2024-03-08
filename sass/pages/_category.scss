@@ -1,6 +1,6 @@
-/* ---------------------------------------------------- */
+/*====================================================================*/
+/*------------------ << Menú Categorías  >> -------------------------*/
 .section-categ {
-	@include caja(var(--colTer), 90);
 	div {
 		font-size: 0.8rem;
 		@include flex-dir-al-jus(flex, column, x, x);
@@ -21,9 +21,9 @@
 		.categ-form-CRUD {
 			@include flex-dir-al-jus(flex, column, x, x);
 			width: 100%;
+
 			.form {
 				width: 100%;
-				margin: 10px;
 				.div-form {
 					width: 100%;
 					@include flex-dir-al-jus(flex, row, x, space-between);
@@ -33,69 +33,105 @@
 					.input {
 						@include flex-dir-al-jus(flex, row, x, x);
 						gap: 10px;
+						input {
+							background-color: var(--colFondoMain);
+							border: 1px solid transparent;
+							border-radius: 4px;
+							font-size: 0.9rem;
+							height: 35px;
+							padding-left: 6px;
+						}
 					}
 
-					button {
-						@extend .montserrat-n-n; //_fonts.scss
-						@include boton(var(--colFondoMain), 40px, false);
-						cursor: pointer;
-					}
-				}
-			}
-		}
-
-		.categ-tabla {
-			width: 100%;
-			border: 5px double var(--colSec);
-
-			.categ-tabla-titulo {
-				width: 100%;
-				height: 25px;
-				border-bottom: 1px solid var(--colSec);
-				@include flex-dir-al-jus(flex, row, x, x);
-
-				.categ-nombre {
-					@include flex-dir-al-jus(flex, x, x, center);
-					width: 70%;
-				}
-
-				.categ-acciones {
-					@include flex-dir-al-jus(flex, x, x, center);
-					width: 30%;
-					border-left: 1px solid var(--colSec);
-				}
-			}
-			.categ-tabla-listado {
-				@include flex-dir-al-jus(flex, column, x, flex-start);
-				min-height: 45vh;
-				overflow-y: auto;
-				width: 100%;
-
-				.categ-tabla-fila {
-					@include flex-dir-al-jus(flex, row, x, x);
-					width: 100%;
-					.categ-tabla-nombres {
-						@include flex-dir-al-jus(flex, x, x, flex-start);
-						padding-left: 15px;
-						width: 70%;
-					}
-					.categ-tabla-iconos {
-						@include flex-dir-al-jus(flex, row, x, center);
-						width: 30%;
-						gap: 20px;
-						border-left: 1px solid var(--colSec);
+					.btn-can-acep {
+						@include flex-dir-al-jus(x, row, x, x);
+						button {
+							@include boton(var(--colFondoMain), 40px, false);
+							cursor: pointer;
+						}
+						.agr {
+							color: var(--colVerde);
+							display: flex;
+						}
 						.edi {
 							color: var(--colVerde);
-							cursor: pointer;
+							display: none;
 						}
 						.del {
 							color: var(--colRojo);
-							cursor: pointer;
 						}
+					}
+				}
+			}
+			.mns-input-cat {
+				@include flex-dir-al-jus(flex, row, x, flex-start);
+				width: 100%;
+				margin-bottom: 15px;
+				padding-left: 15px;
+				color: var(--colVerde);
+				font-size: 0.8rem;
+			}
+			.categ-tabla {
+				width: 100%;
+				border: 5px double var(--colSec);
+				margin-bottom: 30px;
 
-						.edi:hover , .del:hover {
-							filter: drop-shadow(16px 16px 20px var(--colSec)) invert(75%);
+				.categ-tabla-titulo {
+					backdrop-filter: sepia(20%);
+					width: 100%;
+					height: 27px;
+					border-bottom: 1px solid var(--colSec);
+					@include flex-dir-al-jus(flex, row, x, x);
+
+					.categ-nombre {
+						@include flex-dir-al-jus(flex, x, x, center);
+						width: 70%;
+					}
+
+					.categ-acciones {
+						@include flex-dir-al-jus(flex, x, x, center);
+						width: 30%;
+					}
+				}
+				.categ-tabla-listado {
+					@include flex-dir-al-jus(flex, column, x, flex-start);
+					max-height: 40vh;
+					min-height: 40vh;
+					overflow-y: auto;
+					width: 100%;
+
+					.categ-tabla-fila {
+						@include flex-dir-al-jus(flex, row, x, x);
+						width: 100%;
+						height: 27px;
+
+						.categ-tabla-nombres {
+							@include flex-dir-al-jus(flex, x, x, flex-start);
+							padding-left: 15px;
+							width: 70%;
 						}
+						.categ-tabla-iconos {
+							@include flex-dir-al-jus(flex, row, x, center);
+							width: 30%;
+							gap: 20px;
+
+							.edi {
+								color: var(--colVerde);
+								cursor: pointer;
+							}
+							.del {
+								color: var(--colRojo);
+								cursor: pointer;
+							}
+
+							.edi:hover,
+							.del:hover {
+								filter: drop-shadow(16px 16px 20px var(--colSec)) invert(75%);
+							}
+						}
+					}
+					.categ-tabla-fila:hover {
+						backdrop-filter: sepia(20%);
 					}
 				}
 			}

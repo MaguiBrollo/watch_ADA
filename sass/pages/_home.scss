@@ -29,6 +29,7 @@ main {
 
 		section {
 			@include flex-dir-al-jus(x, column, center, center);
+			@include caja(var(--colTer), 90%);
 			div {
 				@include flex-dir-al-jus(flex, column, center, center);
 				h2 {

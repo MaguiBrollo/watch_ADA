@@ -38,7 +38,7 @@ body {
   font-weight: normal;
 }
 
-.montserrat-n-n, .section-categ div .categ-form-CRUD .form .div-form button, body {
+.montserrat-n-n, body {
   font-family: "Montserrat";
   font-weight: 500;
   font-style: normal;
@@ -290,6 +290,13 @@ main .cont-main section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--colTer);
+  box-shadow: 8px 8px 5px -8px rgb(164, 163, 163);
+  width: 90%;
+  height: 96%;
 }
 main .cont-main section div {
   display: flex;
@@ -307,15 +314,8 @@ main .cont-main section div .img-reporte {
   width: 70%;
 }
 
-/* ---------------------------------------------------- */
-.section-categ {
-  margin: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: var(--colTer);
-  box-shadow: 8px 8px 5px -8px rgb(164, 163, 163);
-  width: 90;
-}
+/*====================================================================*/
+/*------------------ << Menú Categorías  >> -------------------------*/
 .section-categ div {
   font-size: 0.8rem;
   display: flex;
@@ -340,7 +340,6 @@ main .cont-main section div .img-reporte {
 }
 .section-categ div .categ-form-CRUD .form {
   width: 100%;
-  margin: 10px;
 }
 .section-categ div .categ-form-CRUD .form .div-form {
   width: 100%;
@@ -355,7 +354,18 @@ main .cont-main section div .img-reporte {
   flex-direction: row;
   gap: 10px;
 }
-.section-categ div .categ-form-CRUD .form .div-form button {
+.section-categ div .categ-form-CRUD .form .div-form .input input {
+  background-color: var(--colFondoMain);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  height: 35px;
+  padding-left: 6px;
+}
+.section-categ div .categ-form-CRUD .form .div-form .btn-can-acep {
+  flex-direction: row;
+}
+.section-categ div .categ-form-CRUD .form .div-form .btn-can-acep button {
   margin: 0px 5px;
   padding: 5px;
   border-radius: 5px;
@@ -366,65 +376,92 @@ main .cont-main section div .img-reporte {
   border: none;
   cursor: pointer;
 }
-.section-categ div .categ-tabla {
+.section-categ div .categ-form-CRUD .form .div-form .btn-can-acep .agr {
+  color: var(--colVerde);
+  display: flex;
+}
+.section-categ div .categ-form-CRUD .form .div-form .btn-can-acep .edi {
+  color: var(--colVerde);
+  display: none;
+}
+.section-categ div .categ-form-CRUD .form .div-form .btn-can-acep .del {
+  color: var(--colRojo);
+}
+.section-categ div .categ-form-CRUD .mns-input-cat {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
+  padding-left: 15px;
+  color: var(--colVerde);
+  font-size: 0.8rem;
+}
+.section-categ div .categ-form-CRUD .categ-tabla {
   width: 100%;
   border: 5px double var(--colSec);
+  margin-bottom: 30px;
 }
-.section-categ div .categ-tabla .categ-tabla-titulo {
+.section-categ div .categ-form-CRUD .categ-tabla .categ-tabla-titulo {
+  backdrop-filter: sepia(20%);
   width: 100%;
-  height: 25px;
+  height: 27px;
   border-bottom: 1px solid var(--colSec);
   display: flex;
   flex-direction: row;
 }
-.section-categ div .categ-tabla .categ-tabla-titulo .categ-nombre {
+.section-categ div .categ-form-CRUD .categ-tabla .categ-tabla-titulo .categ-nombre {
   display: flex;
   justify-content: center;
   width: 70%;
 }
-.section-categ div .categ-tabla .categ-tabla-titulo .categ-acciones {
+.section-categ div .categ-form-CRUD .categ-tabla .categ-tabla-titulo .categ-acciones {
   display: flex;
   justify-content: center;
   width: 30%;
-  border-left: 1px solid var(--colSec);
 }
-.section-categ div .categ-tabla .categ-tabla-listado {
+.section-categ div .categ-form-CRUD .categ-tabla .categ-tabla-listado {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 45vh;
+  max-height: 40vh;
+  min-height: 40vh;
   overflow-y: auto;
   width: 100%;
 }
-.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-fila {
+.section-categ div .categ-form-CRUD .categ-tabla .categ-tabla-listado .categ-tabla-fila {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 27px;
 }
-.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-nombres {
+.section-categ div .categ-form-CRUD .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-nombres {
   display: flex;
   justify-content: flex-start;
   padding-left: 15px;
   width: 70%;
 }
-.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos {
+.section-categ div .categ-form-CRUD .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 30%;
   gap: 20px;
-  border-left: 1px solid var(--colSec);
 }
-.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos .edi {
+.section-categ div .categ-form-CRUD .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos .edi {
   color: var(--colVerde);
   cursor: pointer;
 }
-.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos .del {
+.section-categ div .categ-form-CRUD .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos .del {
   color: var(--colRojo);
   cursor: pointer;
 }
-.section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos .edi:hover, .section-categ div .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos .del:hover {
+.section-categ div .categ-form-CRUD .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos .edi:hover,
+.section-categ div .categ-form-CRUD .categ-tabla .categ-tabla-listado .categ-tabla-fila .categ-tabla-iconos .del:hover {
   filter: drop-shadow(16px 16px 20px var(--colSec)) invert(75%);
+}
+.section-categ div .categ-form-CRUD .categ-tabla .categ-tabla-listado .categ-tabla-fila:hover {
+  backdrop-filter: sepia(20%);
 }
 @media (min-width: 576px) {
   .section-categ div {
