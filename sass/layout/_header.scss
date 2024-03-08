@@ -30,22 +30,27 @@ header {
 			width: 50%;
 			@include flex-dir-al-jus(flex, row, center, flex-end);
 			border: none;
+			cursor: pointer;
+
 			&__abrir {
 				@include boton(var(--colPpal), 35px, true);
-				cursor: pointer;
+				&.ocultar {
+					display: none;
+				}
 			}
 			&__cerrar {
-
 				@include boton(var(--colPpal), 35px, true);
-				cursor: pointer;
-				display: none;
+				//@extend .ocultar;
+				&.ocultar {
+					display: none;
+				}
 			}
 		}
 	}
 
 	nav {
 		width: 100%;
-		@include flex-dir-al-jus(none, x, x, flex-end);
+		@include flex-dir-al-jus(flex, x, x, flex-end);
 
 		.nav-container {
 			@include flex-dir-al-jus(flex, column, center, x);
@@ -74,8 +79,12 @@ header {
 			}
 		}
 	}
+}
+@media (min-width: #{$md}) {
+	//576
+	header {
+		display: flex;
 
-	@media (min-width: #{$md}) {
 		.cont-titulo {
 			width: 25%;
 

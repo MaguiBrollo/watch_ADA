@@ -111,6 +111,7 @@ header .cont-titulo .btn-menu-hamb {
   align-items: center;
   justify-content: flex-end;
   border: none;
+  cursor: pointer;
 }
 header .cont-titulo .btn-menu-hamb__abrir {
   margin: 0px 5px;
@@ -122,7 +123,9 @@ header .cont-titulo .btn-menu-hamb__abrir {
   justify-content: center;
   border: none;
   box-shadow: 5px 5px 5px -3px rgb(140, 136, 136);
-  cursor: pointer;
+}
+header .cont-titulo .btn-menu-hamb__abrir.ocultar {
+  display: none;
 }
 header .cont-titulo .btn-menu-hamb__cerrar {
   margin: 0px 5px;
@@ -134,12 +137,13 @@ header .cont-titulo .btn-menu-hamb__cerrar {
   justify-content: center;
   border: none;
   box-shadow: 5px 5px 5px -3px rgb(140, 136, 136);
-  cursor: pointer;
+}
+header .cont-titulo .btn-menu-hamb__cerrar.ocultar {
   display: none;
 }
 header nav {
   width: 100%;
-  display: none;
+  display: flex;
   justify-content: flex-end;
 }
 header nav .nav-container {
@@ -186,7 +190,11 @@ header nav .nav-container a:hover {
 header nav .nav-container a:last-child:hover {
   background-color: var(--colPpal);
 }
+
 @media (min-width: 768px) {
+  header {
+    display: flex;
+  }
   header .cont-titulo {
     width: 25%;
   }
@@ -208,7 +216,6 @@ header nav .nav-container a:last-child:hover {
     flex-direction: row;
   }
 }
-
 /*====================================================================*/
 /*-------------------------  << FOOTER  >> ---------------------------*/
 .color-fuente, footer h3, footer nav .nav-cont a {
@@ -290,7 +297,7 @@ main .cont-main section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10px;
+  margin: 10px auto;
   padding: 10px;
   border-radius: 5px;
   background-color: var(--colTer);

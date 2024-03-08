@@ -9,22 +9,22 @@ const menuCategorias = document.getElementById("menu-categorias");
 const menuReportes = document.getElementById("menu-reportes");
 
 abrir.addEventListener("click", () => {
-	nav_header.classList.remove("hidden");
-	cerrar.classList.remove("hidden");
-	abrir.classList.add("hidden");
+	nav_header.classList.remove("ocultar");
+	cerrar.classList.remove("ocultar");
+	abrir.classList.add("ocultar");
 });
 
 function cerrarNav() {
-	nav_header.classList.add("hidden");
-	cerrar.classList.add("hidden");
-	abrir.classList.remove("hidden");
+	nav_header.classList.add("ocultar");
+	cerrar.classList.add("ocultar");
+	abrir.classList.remove("ocultar");
 }
 
 cerrar.addEventListener("click", cerrarNav);
-menuInicio.addEventListener("click", cerrarNav);
+/* menuInicio.addEventListener("click", cerrarNav);
 menuBalance.addEventListener("click", cerrarNav);
 menuCategorias.addEventListener("click", cerrarNav);
-menuReportes.addEventListener("click", cerrarNav);
+menuReportes.addEventListener("click", cerrarNav); */
 
 const contenedor_menuInicio = document.getElementById("cont-menu-inicio");
 const contenedor_menuBalance = document.getElementById("cont-menu-balance");
