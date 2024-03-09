@@ -9,13 +9,15 @@ const menuCategorias = document.getElementById("menu-categorias");
 const menuReportes = document.getElementById("menu-reportes");
 
 abrir.addEventListener("click", () => {
-	nav_header.classList.remove("ocultar");
+	//document.getElementById("nav-header").style.display = `flex`;
+	document.getElementById("nav-header").classList.remove("ocultar");
 	cerrar.classList.remove("ocultar");
 	abrir.classList.add("ocultar");
 });
 
 function cerrarNav() {
-	nav_header.classList.add("ocultar");
+	//document.getElementById("nav-header").style.display = `none`;
+	document.getElementById("nav-header").classList.add("ocultar");
 	cerrar.classList.add("ocultar");
 	abrir.classList.remove("ocultar");
 }

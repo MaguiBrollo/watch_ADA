@@ -10,6 +10,9 @@ body {
 .ocultar {
 	display: none;
 }
+.mostrar {
+	display: flex;
+}
 
 .tamanio-frase {
 	font-size: clamp(1rem, -0.0698rem + 3.0387vw, 1.875rem);
