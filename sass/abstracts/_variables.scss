@@ -5,7 +5,7 @@
 	/* Modo claro*/
 	--colPpal: #cddbff;
 	--colSec: #9aade5;
-	--colTer:#bfccf5;
+	--colTer: #bfccf5;
 	--colHoverBtn: #f2f9ff;
 	--colFondoMain: rgb(232, 241, 255);
 	--colFuente: #111827; /*  gray 900*/
@@ -13,10 +13,10 @@
 	--colVerde: rgb(34, 100, 34);
 	--colRojo: rgb(178, 59, 59);
 
-
 	color-scheme: light; /*color por defecto de win, para barras de scroll*/
 
 	--transition: color 0.1s, background-color 0.2s ease-in-out;
+
 }
 
 :root[data-theme-color="dark"] {
@@ -34,7 +34,8 @@
 	color-scheme: dark; /*color por defecto de win, para barras de scroll*/
 }
 
-
+/*NOTA:  el valor 768 de "md"  debe coincidir con el valor de la 
+       variable del IF en el archivo main.js */
 $sm: "576px"; // => @media (min-width: 576px) { ... }
 $md: "768px"; // => @media (min-width: 768px) { ... }
 $lg: "1024px"; // => @media (min-width: 1440px) { ... }

@@ -1,5 +1,4 @@
-// para traer las variables desde el CSS
-
+// Para traer las variables desde el CSS
 let colRoj = getComputedStyle(document.documentElement).getPropertyValue(
 	"--colRojo"
 );

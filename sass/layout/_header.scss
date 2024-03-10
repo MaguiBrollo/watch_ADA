@@ -50,8 +50,10 @@ header {
 	nav {
 		width: 100%;
 		@include flex-dir-al-jus(none, x, x, flex-end);
-		background-color: rgb(158, 180, 200);
+		background-color: rgb(227, 240, 252);
+		opacity: 0.9;
 		padding: 5px;
+
 		.nav-container {
 			gap: 5px;
 			width: 100%;
@@ -82,12 +84,12 @@ header {
 		}
 	}
 }
+//$md: "768px" ver en varibales.scss;
 @media (min-width: #{$md}) {
-	//576
 	header {
 		@include flex-dir-al-jus(flex, row, x, flex-end);
 		.cont-titulo {
-			width: 25%;
+			width: 30%;
 
 			.titulo-ada {
 				font-size: 2.4rem;
@@ -101,8 +103,10 @@ header {
 		}
 
 		nav {
-			width: 75%;
+			width: 70%;
 			background-color: var(--colSec);
+			@include flex-dir-al-jus(flex, row, x, flex-end);
+
 			.nav-container {
 				@include flex-dir-al-jus(flex, row, x, flex-end);
 			}

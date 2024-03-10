@@ -50,7 +50,7 @@ body {
   /* Modo claro*/
   --colPpal: #cddbff;
   --colSec: #9aade5;
-  --colTer:#bfccf5;
+  --colTer: #bfccf5;
   --colHoverBtn: #f2f9ff;
   --colFondoMain: rgb(232, 241, 255);
   --colFuente: #111827; /*  gray 900*/
@@ -75,6 +75,8 @@ body {
   color-scheme: dark; /*color por defecto de win, para barras de scroll*/
 }
 
+/*NOTA:  el valor 768 de "md"  debe coincidir con el valor de la 
+       variable del IF en el archivo main.js */
 /*====================================================================*/
 /*-------------------------- << MIXINS  >> ---------------------------*/
 header {
@@ -146,7 +148,8 @@ header nav {
   width: 100%;
   display: none;
   justify-content: flex-end;
-  background-color: rgb(158, 180, 200);
+  background-color: rgb(227, 240, 252);
+  opacity: 0.9;
   padding: 5px;
 }
 header nav .nav-container {
@@ -203,7 +206,7 @@ header nav .nav-container a:last-child:hover {
     justify-content: flex-end;
   }
   header .cont-titulo {
-    width: 25%;
+    width: 30%;
   }
   header .cont-titulo .titulo-ada {
     font-size: 2.4rem;
@@ -215,8 +218,11 @@ header nav .nav-container a:last-child:hover {
     display: none;
   }
   header nav {
-    width: 75%;
+    width: 70%;
     background-color: var(--colSec);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   }
   header nav .nav-container {
     display: flex;

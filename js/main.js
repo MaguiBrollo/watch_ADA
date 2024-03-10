@@ -1,3 +1,22 @@
+/* Por motivos de que SASS no trabaja correctamente en poner y sacar
+la clase "ocultar", es que debo agregar esta función. 
+NOTA:  el valor 768 del IF debe coincidir con el valor de la 
+       variable "md" del archivo variables.scss
+		 (todavía no se como traer esa variable)
+*/
+let tmnSM = getComputedStyle(document.documentElement).getPropertyValue("sm");
+
+window.visualViewport.addEventListener("resize", () => {
+	if (window.innerWidth >= 768) {
+		document.getElementById("nav-header").classList.remove("ocultar");
+		document.getElementById("nav-header").classList.add("mostrar");
+	} else {
+		document.getElementById("nav-header").classList.remove("mostrar");
+		document.getElementById("nav-header").classList.add("ocultar");
+	}
+});
+//--------------------------------------------------------------------------
+
 /* ================== Menú  - y Menú Hambburguesa  ================ */
 const nav_header = document.getElementById("nav-header");
 const abrir = document.getElementById("abrir");
@@ -9,24 +28,28 @@ const menuCategorias = document.getElementById("menu-categorias");
 const menuReportes = document.getElementById("menu-reportes");
 
 abrir.addEventListener("click", () => {
-	//document.getElementById("nav-header").style.display = `flex`;
-	document.getElementById("nav-header").classList.remove("ocultar");
+	nav_header.classList.remove("ocultar");
+	nav_header.classList.add("mostrar");
 	cerrar.classList.remove("ocultar");
 	abrir.classList.add("ocultar");
 });
 
 function cerrarNav() {
-	//document.getElementById("nav-header").style.display = `none`;
-	document.getElementById("nav-header").classList.add("ocultar");
-	cerrar.classList.add("ocultar");
-	abrir.classList.remove("ocultar");
+	/* Este If es un parche porque con SASS no 
+	   funcioan bien el poner y sacar clases*/
+	if (window.innerWidth <= 768) {
+		nav_header.classList.remove("mostrar");
+		nav_header.classList.add("ocultar");
+		cerrar.classList.add("ocultar");
+		abrir.classList.remove("ocultar");
+	}
 }
 
 cerrar.addEventListener("click", cerrarNav);
-/* menuInicio.addEventListener("click", cerrarNav);
+menuInicio.addEventListener("click", cerrarNav);
 menuBalance.addEventListener("click", cerrarNav);
 menuCategorias.addEventListener("click", cerrarNav);
-menuReportes.addEventListener("click", cerrarNav); */
+menuReportes.addEventListener("click", cerrarNav);
 
 const contenedor_menuInicio = document.getElementById("cont-menu-inicio");
 const contenedor_menuBalance = document.getElementById("cont-menu-balance");
