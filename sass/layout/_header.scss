@@ -85,7 +85,7 @@ header {
 	}
 }
 //$md: "768px" ver en varibales.scss;
-@media (min-width: #{$md}) {
+@media (min-width: #{$md}px) {
 	header {
 		@include flex-dir-al-jus(flex, row, x, flex-end);
 		.cont-titulo {

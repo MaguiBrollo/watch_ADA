@@ -1,18 +1,15 @@
 /* Por motivos de que SASS no trabaja correctamente en poner y sacar
 la clase "ocultar", es que debo agregar esta función. 
-NOTA:  el valor 768 del IF debe coincidir con el valor de la 
-       variable "md" del archivo variables.scss
-		 (todavía no se como traer esa variable)
 */
+let md_px = getComputedStyle(document.documentElement).getPropertyValue("--md");
 let tmnSM = getComputedStyle(document.documentElement).getPropertyValue("sm");
 
 window.visualViewport.addEventListener("resize", () => {
-	if (window.innerWidth >= 768) {
+	if (window.innerWidth >= `${md_px}`) {
 		document.getElementById("nav-header").classList.remove("ocultar");
 		document.getElementById("nav-header").classList.add("mostrar");
 	} else {
-		document.getElementById("nav-header").classList.remove("mostrar");
-		document.getElementById("nav-header").classList.add("ocultar");
+		cerrarNav();
 	}
 });
 //--------------------------------------------------------------------------
@@ -22,11 +19,15 @@ const nav_header = document.getElementById("nav-header");
 const abrir = document.getElementById("abrir");
 const cerrar = document.getElementById("cerrar");
 
-const menuInicio = document.getElementById("menu-inicio");
-const menuBalance = document.getElementById("menu-balance");
-const menuCategorias = document.getElementById("menu-categorias");
-const menuReportes = document.getElementById("menu-reportes");
-
+function cerrarNav() {
+	/* Este If es un parche porque con SASS no funciona bien el poner y sacar clases*/
+	if (window.innerWidth <= `${md_px}`) {
+		nav_header.classList.remove("mostrar");
+		nav_header.classList.add("ocultar");
+		cerrar.classList.add("ocultar");
+		abrir.classList.remove("ocultar");
+	}
+}
 abrir.addEventListener("click", () => {
 	nav_header.classList.remove("ocultar");
 	nav_header.classList.add("mostrar");
@@ -34,22 +35,12 @@ abrir.addEventListener("click", () => {
 	abrir.classList.add("ocultar");
 });
 
-function cerrarNav() {
-	/* Este If es un parche porque con SASS no 
-	   funcioan bien el poner y sacar clases*/
-	if (window.innerWidth <= 768) {
-		nav_header.classList.remove("mostrar");
-		nav_header.classList.add("ocultar");
-		cerrar.classList.add("ocultar");
-		abrir.classList.remove("ocultar");
-	}
-}
-
 cerrar.addEventListener("click", cerrarNav);
-menuInicio.addEventListener("click", cerrarNav);
-menuBalance.addEventListener("click", cerrarNav);
-menuCategorias.addEventListener("click", cerrarNav);
-menuReportes.addEventListener("click", cerrarNav);
+
+const menuInicio = document.getElementById("menu-inicio");
+const menuBalance = document.getElementById("menu-balance");
+const menuCategorias = document.getElementById("menu-categorias");
+const menuReportes = document.getElementById("menu-reportes");
 
 const contenedor_menuInicio = document.getElementById("cont-menu-inicio");
 const contenedor_menuBalance = document.getElementById("cont-menu-balance");
@@ -66,19 +57,23 @@ function mostrar(mostrar) {
 }
 
 menuInicio.addEventListener("click", () => {
+	cerrarNav();
 	mostrar(contenedor_menuInicio);
 });
 
 menuBalance.addEventListener("click", () => {
+	cerrarNav();
 	mostrar(contenedor_menuBalance);
 });
 
 menuCategorias.addEventListener("click", () => {
+	cerrarNav();
 	mostrar(contenedor_menuCategorias);
 	funcionesCategorias(); // ver categorias.js
 });
 
 menuReportes.addEventListener("click", () => {
+	cerrarNav();
 	mostrar(contenedor_menuReportes);
 	//mostrarReportes(); /* ver en scriptReportes.js */
 });

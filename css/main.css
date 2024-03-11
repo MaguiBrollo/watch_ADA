@@ -46,6 +46,8 @@ body {
 
 /*====================================================================*/
 /*--------------- << _variables: Variables globales >> ---------------*/
+/*NOTA:  el valor 768 de "md"  debe coincidir con el valor de la 
+       variable del IF en el archivo main.js */
 :root {
   /* Modo claro*/
   --colPpal: #cddbff;
@@ -59,6 +61,7 @@ body {
   --colRojo: rgb(178, 59, 59);
   color-scheme: light; /*color por defecto de win, para barras de scroll*/
   --transition: color 0.1s, background-color 0.2s ease-in-out;
+  --md:768;
 }
 
 :root[data-theme-color=dark] {
@@ -75,8 +78,6 @@ body {
   color-scheme: dark; /*color por defecto de win, para barras de scroll*/
 }
 
-/*NOTA:  el valor 768 de "md"  debe coincidir con el valor de la 
-       variable del IF en el archivo main.js */
 /*====================================================================*/
 /*-------------------------- << MIXINS  >> ---------------------------*/
 header {

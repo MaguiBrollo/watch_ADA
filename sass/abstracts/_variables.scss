@@ -1,6 +1,10 @@
 /*====================================================================*/
 /*--------------- << _variables: Variables globales >> ---------------*/
 
+$sm: "576px"; // => @media (min-width: 576px) { ... }
+$md: 768; // => @media (min-width: 768px) { ... }
+$lg: "1024px"; // => @media (min-width: 1440px) { ... }
+
 :root {
 	/* Modo claro*/
 	--colPpal: #cddbff;
@@ -16,7 +20,7 @@
 	color-scheme: light; /*color por defecto de win, para barras de scroll*/
 
 	--transition: color 0.1s, background-color 0.2s ease-in-out;
-
+	--md: #{$md};
 }
 
 :root[data-theme-color="dark"] {
@@ -33,9 +37,3 @@
 
 	color-scheme: dark; /*color por defecto de win, para barras de scroll*/
 }
-
-/*NOTA:  el valor 768 de "md"  debe coincidir con el valor de la 
-       variable del IF en el archivo main.js */
-$sm: "576px"; // => @media (min-width: 576px) { ... }
-$md: "768px"; // => @media (min-width: 768px) { ... }
-$lg: "1024px"; // => @media (min-width: 1440px) { ... }
