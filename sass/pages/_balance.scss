@@ -1,0 +1,100 @@
+.section-balance {
+	@include flex-dir-al-jus(x, column, center, center);
+	@include caja(var(--colTer), 90%);
+	div {
+		@include flex-dir-al-jus(flex, column, x, x);
+
+		.cont-bal-fil {
+			@include flex-dir-al-jus(flex, column, x, x);
+			width: 100%;
+			height: 100%;
+
+			.cont-bal {
+				@include flex-dir-al-jus(flex, column, x, x);
+				margin: 4px;
+
+				h2 {
+					font-weight: bold;
+					font-size: 1.4rem;
+					margin-bottom: 15px;
+					@extend .lora-i-n; //fonts.scss
+				}
+				.cont-bal__numeros {
+					font-weight: 0.8rem;
+
+					div {
+						@include flex-dir-al-jus(flex, row, x, space-between);
+						margin-bottom: 5px;
+						div {
+							@include flex-dir-al-jus(flex, x, center, flex-end);
+							width: 69%;
+						}
+					}
+				}
+			}
+			.cont-fil {
+				margin: 4px;
+
+				.cont-fil-titulo {
+					@include flex-dir-al-jus(flex, row, x, space-between);
+					margin-bottom: 15px;
+					h2 {
+						font-weight: bold;
+						font-size: 1.4rem;
+						@extend .lora-i-n; //fonts.scss
+					}
+					a {
+						@include flex-dir-al-jus(flex, row, center, flex-end);
+						width: 58%;
+						font-size: 0.9rem;
+					}
+				}
+				div {
+					//haasta AQUIIIIIIIIIIIIIII 13/3/24 21:30HS
+				}
+				//nn
+			}
+		}
+		.cont-sin-con-oper {
+			// h-[auto] lg:w-[68%] m-4 p-5 rounded-lg shadow-2xl
+			height: auto;
+			margin: 4px;
+			padding: 5px;
+		}
+	}
+}
+
+//--------------------------------------------
+//$md: "768px" ver en varibales.scss;
+@media (min-width: #{$md}px) {
+	.section-balance {
+		div {
+			@include flex-dir-al-jus(flex, row, x, x);
+			width: 100%;
+			max-width: 1200px;
+			.cont-bal-fil {
+				@include flex-dir-al-jus(flex, x, x, x);
+				width: 27%;
+
+				.cont-bal {
+					width: 100%;
+
+					h2 {
+						font-weight: bold;
+						font-size: 0.8rem;
+					}
+					.cont-bal__numeros {
+						font-weight: 1rem;
+					}
+				}
+				.con-fil {
+					width: 100%;
+				}
+			}
+
+			.cont-sin-con-oper {
+				width: 68%;
+			}
+		}
+	}
+}

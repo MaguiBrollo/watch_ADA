@@ -1,9 +1,11 @@
 /*====================================================================*/
 /*------------------ << Menú Categorías  >> -------------------------*/
 .section-categ {
+	@include flex-dir-al-jus(x, column, center, center);
+	@include caja(var(--colTer), 90%);
 	div {
 		font-size: 0.8rem;
-		@include flex-dir-al-jus(flex, column, x, x);
+		@include flex-dir-al-jus(flex, column,center,center);
 
 		.categ-tit-img {
 			width: 100%;
@@ -138,14 +140,7 @@
 		}
 	}
 
-	@media (min-width: #{$sm}) {
-		div {
-			font-size: 1rem;
-			.categ-form-CRUD {
-				width: 90%;
-			}
-		}
-	}
+	//--------------------------------------------
 	//$md: "768px" ver en varibales.scss;
 	@media (min-width: #{$md}px) {
 		div {

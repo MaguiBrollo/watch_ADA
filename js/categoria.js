@@ -51,9 +51,8 @@ let registrarCategoria = async () => {
 			body: JSON.stringify(categoria),
 		});
 	} catch (error) {
-		console.log("ERROR - CREAR categoría: ", error); //para ver error
+		console.log("ERROR - CREAR categoría: ", error); 
 	}
-
 	document.getElementById("categ_nombre").value = "";
 	listarCategorias(); //actualizar listado
 };

@@ -1,9 +1,9 @@
 /*====================================================================*/
 /*--------------- << _variables: Variables globales >> ---------------*/
 
-$sm: "576px"; // => @media (min-width: 576px) { ... }
+$sm: 576; // => @media (min-width: 576px) { ... }
 $md: 768; // => @media (min-width: 768px) { ... }
-$lg: "1024px"; // => @media (min-width: 1440px) { ... }
+$lg: 1024; // => @media (min-width: 1440px) { ... }
 
 :root {
 	/* Modo claro*/

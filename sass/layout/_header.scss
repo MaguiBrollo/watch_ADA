@@ -30,16 +30,17 @@ header {
 			padding-right: 10px;
 			@include flex-dir-al-jus(flex, row, center, flex-end);
 			border: none;
-			cursor: pointer;
 
 			&__abrir {
 				@include boton(var(--colPpal), 35px, true);
+				cursor: pointer;
 				&.ocultar {
 					display: none;
 				}
 			}
 			&__cerrar {
 				@include boton(var(--colPpal), 35px, true);
+				cursor: pointer;
 				&.ocultar {
 					display: none;
 				}

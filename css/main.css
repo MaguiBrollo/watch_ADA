@@ -32,7 +32,7 @@ body {
   font-weight: 500;
   font-style: italic;
 }
-.lora-i-n, .section-categ div .categ-tit-img h2, main .cont-main section div h2, .tamanio-frase, footer h3, header nav .nav-container, header .cont-titulo .titulo-ada h1 {
+.lora-i-n, .section-balance div .cont-bal-fil .cont-fil .cont-fil-titulo h2, .section-balance div .cont-bal-fil .cont-bal h2, .section-categ div .categ-tit-img h2, main .cont-main .section-x div h2, .tamanio-frase, footer h3, header nav .nav-container, header .cont-titulo .titulo-ada h1 {
   font-family: "Lora";
   font-style: italic;
   font-weight: normal;
@@ -46,8 +46,6 @@ body {
 
 /*====================================================================*/
 /*--------------- << _variables: Variables globales >> ---------------*/
-/*NOTA:  el valor 768 de "md"  debe coincidir con el valor de la 
-       variable del IF en el archivo main.js */
 :root {
   /* Modo claro*/
   --colPpal: #cddbff;
@@ -61,7 +59,7 @@ body {
   --colRojo: rgb(178, 59, 59);
   color-scheme: light; /*color por defecto de win, para barras de scroll*/
   --transition: color 0.1s, background-color 0.2s ease-in-out;
-  --md:768;
+  --md: 768;
 }
 
 :root[data-theme-color=dark] {
@@ -115,7 +113,6 @@ header .cont-titulo .btn-menu-hamb {
   align-items: center;
   justify-content: flex-end;
   border: none;
-  cursor: pointer;
 }
 header .cont-titulo .btn-menu-hamb__abrir {
   margin: 0px 5px;
@@ -127,6 +124,7 @@ header .cont-titulo .btn-menu-hamb__abrir {
   justify-content: center;
   border: none;
   box-shadow: 5px 5px 5px -3px rgb(140, 136, 136);
+  cursor: pointer;
 }
 header .cont-titulo .btn-menu-hamb__abrir.ocultar {
   display: none;
@@ -141,6 +139,7 @@ header .cont-titulo .btn-menu-hamb__cerrar {
   justify-content: center;
   border: none;
   box-shadow: 5px 5px 5px -3px rgb(140, 136, 136);
+  cursor: pointer;
 }
 header .cont-titulo .btn-menu-hamb__cerrar.ocultar {
   display: none;
@@ -305,14 +304,13 @@ main {
   min-height: calc(100% - 80px - 80px);
   display: flex;
   justify-content: center;
-  /*Categorías-> pages/category.scss*/
 }
 main .cont-main {
   color: var(--colFuente);
   width: 100%;
   max-width: 992px;
 }
-main .cont-main section {
+main .cont-main .section-x {
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -324,28 +322,39 @@ main .cont-main section {
   width: 90%;
   height: 96%;
 }
-main .cont-main section div {
+main .cont-main .section-x div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-main .cont-main section div .img-inicio {
+main .cont-main .section-x div .img-inicio {
   width: 80%;
 }
-main .cont-main section div .img-balance {
-  width: 50%;
-}
-main .cont-main section div .img-reporte {
+main .cont-main .section-x div .img-reporte {
   width: 70%;
 }
 
 /*====================================================================*/
 /*------------------ << Menú Categorías  >> -------------------------*/
+.section-categ {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--colTer);
+  box-shadow: 8px 8px 5px -8px rgb(164, 163, 163);
+  width: 90%;
+  height: 96%;
+}
 .section-categ div {
   font-size: 0.8rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .section-categ div .categ-tit-img {
   width: 100%;
@@ -489,20 +498,115 @@ main .cont-main section div .img-reporte {
 .section-categ div .categ-form-CRUD .categ-tabla .categ-tabla-listado .categ-tabla-fila:hover {
   backdrop-filter: sepia(20%);
 }
-@media (min-width: 576px) {
-  .section-categ div {
-    font-size: 1rem;
-  }
-  .section-categ div .categ-form-CRUD {
-    width: 90%;
-  }
-}
 @media (min-width: 768px) {
   .section-categ div {
     font-size: 1rem;
   }
   .section-categ div .categ-form-CRUD {
     width: 80%;
+  }
+}
+
+.section-balance {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--colTer);
+  box-shadow: 8px 8px 5px -8px rgb(164, 163, 163);
+  width: 90%;
+  height: 96%;
+}
+.section-balance div {
+  display: flex;
+  flex-direction: column;
+}
+.section-balance div .cont-bal-fil {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.section-balance div .cont-bal-fil .cont-bal {
+  display: flex;
+  flex-direction: column;
+  margin: 4px;
+}
+.section-balance div .cont-bal-fil .cont-bal h2 {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+.section-balance div .cont-bal-fil .cont-bal .cont-bal__numeros {
+  font-weight: 0.8rem;
+}
+.section-balance div .cont-bal-fil .cont-bal .cont-bal__numeros div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.section-balance div .cont-bal-fil .cont-bal .cont-bal__numeros div div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 69%;
+}
+.section-balance div .cont-bal-fil .cont-fil {
+  margin: 4px;
+}
+.section-balance div .cont-bal-fil .cont-fil .cont-fil-titulo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.section-balance div .cont-bal-fil .cont-fil .cont-fil-titulo h2 {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.section-balance div .cont-bal-fil .cont-fil .cont-fil-titulo a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 58%;
+  font-size: 0.9rem;
+}
+.section-balance div .cont-sin-con-oper {
+  height: auto;
+  margin: 4px;
+  padding: 5px;
+}
+
+@media (min-width: 768px) {
+  .section-balance div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+  }
+  .section-balance div .cont-bal-fil {
+    display: flex;
+    width: 27%;
+  }
+  .section-balance div .cont-bal-fil .cont-bal {
+    width: 100%;
+  }
+  .section-balance div .cont-bal-fil .cont-bal h2 {
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  .section-balance div .cont-bal-fil .cont-bal .cont-bal__numeros {
+    font-weight: 1rem;
+  }
+  .section-balance div .cont-bal-fil .con-fil {
+    width: 100%;
+  }
+  .section-balance div .cont-sin-con-oper {
+    width: 68%;
   }
 }
 

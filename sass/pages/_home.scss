@@ -30,7 +30,7 @@ main {
 		width: 100%;
 		max-width: 992px;
 
-		section {
+		.section-x {
 			@include flex-dir-al-jus(x, column, center, center);
 			@include caja(var(--colTer), 90%);
 			div {
@@ -41,9 +41,7 @@ main {
 				.img-inicio {
 					width: 80%;
 				}
-				.img-balance {
-					width: 50%;
-				}
+				
 				.img-reporte {
 					width: 70%;
 				}
