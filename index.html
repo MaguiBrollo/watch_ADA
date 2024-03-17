@@ -28,7 +28,7 @@
 	<body>
 		<header class="header">
 			<div class="header__cont-titulo">
-				<div class="header__titulo-ada">
+				<div class="header__logo-ada">
 					<img
 						src="img/ahorrosM_ico.png"
 						alt="Logo Watch"
@@ -37,25 +37,25 @@
 					<h1>Watch+</h1>
 				</div>
 
-				<div class="header__cont-der">
+				<div class="header__cont-modo-hamb">
 					<button class="header__modo" tabindex="0" id="btn-claro-oscuro">
-						<span class="material-symbols-outlined">dark_mode</span>
+						<span class="header__span-modo material-symbols-outlined">dark_mode</span>
 					</button>
 
 					<!-- Menú hamb -->
-					<div class="header__cont-menu-hamb">
-						<button class="header__menu-hamb" id="abrir">
+					<div class="header__cont-hamb">
+						<button class="header__hamb" id="abrir">
 							<span class="material-symbols-outlined">menu</span>
 						</button>
 
-						<button class="header__menu-hamb ocultar" id="cerrar">
+						<button class="header__hamb header-ocultar" id="cerrar">
 							<span class="material-symbols-outlined"> close </span>
 						</button>
 					</div>
 				</div>
 			</div>
 
-			<nav class="header__nav" id="nav-header">
+			<nav class="header__nav header-ocultar" id="nav-header">
 				<div class="header__cont-nav">
 					<a class="header__nav-a" tabindex="0" href="#" id="menu-inicio">
 						<span class="header__nav-a-span material-symbols-outlined">
@@ -111,7 +111,7 @@
 				<!-- ==========================================  -->
 				<!-- ============= MENÚ BALANCE ===============  -->
 				<!-- contiene a contenedor BALANCE-FILTROS y contenedor OPERACIONES -->
-				<section class="balance" id="cont-menu-balance">
+				<section class="balance " id="cont-menu-balance">
 					<!-- contenedor BALANCE-FILTROS -->
 					<div class="balance__cont-bal-fil">
 						<!-- contenedor BALANCE -->
@@ -140,7 +140,7 @@
 								<h2>Filtros</h2>
 								<a href="#" id="ocultar-filtros"
 									><i class="fa-regular fa-eye"></i>
-									<p>Mostrar Filtros</p>
+									Mostrar Filtros
 								</a>
 							</div>
 							<!-- contenedor FILTROS (se oculta) -->
@@ -217,7 +217,7 @@
 					</div>
 
 					<!-- contenedor SIN/CON OPERACIONES -->
-					<div class="cont-sin-con-oper">
+					<div class="balance__cont-sin-con-oper">
 						<div class="flex">
 							<h2
 								class="w-[70%] text-colSec dark:text-black font-Lora text-4xl font-bold"

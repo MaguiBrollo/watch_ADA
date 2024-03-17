@@ -6,8 +6,8 @@ let md_px = getComputedStyle(document.documentElement).getPropertyValue("--md");
 
 window.visualViewport.addEventListener("resize", () => {
 	if (window.innerWidth >= `${md_px}`) {
-		document.getElementById("nav-header").classList.remove("ocultar");
-		document.getElementById("nav-header").classList.add("mostrar");
+		document.getElementById("nav-header").classList.remove("header-ocultar");
+		document.getElementById("nav-header").classList.add("header-mostrar");
 	} else {
 		cerrarNav();
 	}
@@ -23,17 +23,17 @@ function cerrarNav() {
 	/* Este If es un parche porque con SASS no funciona bien el poner y sacar clases*/
 	if (window.innerWidth < `${md_px}`) {
 		console.log(window.innerWidth);
-		nav_header.classList.remove("mostrar");
-		nav_header.classList.add("ocultar");
-		cerrar.classList.add("ocultar");
-		abrir.classList.remove("ocultar");
+		nav_header.classList.remove("header-mostrar");
+		nav_header.classList.add("header-ocultar");
+		cerrar.classList.add("header-ocultar");
+		abrir.classList.remove("header-ocultar");
 	}
 }
 abrir.addEventListener("click", () => {
-	nav_header.classList.remove("ocultar");
-	nav_header.classList.add("mostrar");
-	cerrar.classList.remove("ocultar");
-	abrir.classList.add("ocultar");
+	nav_header.classList.remove("header-ocultar");
+	nav_header.classList.add("header-mostrar");
+	cerrar.classList.remove("header-ocultar");
+	abrir.classList.add("header-ocultar");
 });
 
 cerrar.addEventListener("click", cerrarNav);

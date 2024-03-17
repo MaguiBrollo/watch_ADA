@@ -1,20 +1,27 @@
 /*====================================================================*/
 /*-------------------------  << HEADER  >> ---------------------------*/
+.header-ocultar {
+	display: none;
+}
+.header-mostrar {
+	display: flex;
+}
+//-------------------------
 .header {
 	width: 100%;
 	height: auto;
 	background-color: var(--colSec);
-
 	@include flex-dir-al-jus(flex, column, x, x);
 
 	&__cont-titulo {
 		color: var(--colFuente);
 		width: 100%;
-		padding-left: 15px;
 		@include flex-dir-al-jus(flex, row, x, x);
+		padding-left: 10px;
+		padding-right: 10px;
 	}
-	&__titulo-ada {
-		width: 70%;
+	&__logo-ada {
+		width: 50%;
 		height: 80px;
 		font-size: 2rem;
 		@include flex-dir-al-jus(flex, row, center, x);
@@ -27,24 +34,24 @@
 		}
 	}
 
-	&__cont-der {
-		width: 30%;
+	&__cont-modo-hamb {
+		width: 50%;
 		@include flex-dir-al-jus(flex, row, center, flex-end);
 	}
 	&__modo {
 		@include boton(var(--colSec), 35px, false);
+		font-size: 1.2rem;
 		cursor: pointer;
 	}
 
-	&__cont-menu-hamb {
-		padding-right: 10px;
+	&__cont-hamb {
 		@include flex-dir-al-jus(flex, row, center, flex-end);
 	}
 
-	&__menu-hamb {
+	&__hamb {
 		@include boton(var(--colSec), 35px, false);
 		cursor: pointer;
-		&.ocultar {
+		&.header-ocultar {
 			display: none;
 		}
 	}
@@ -56,8 +63,7 @@
 
 	&__nav {
 		width: 100%;
-		@include flex-dir-al-jus(none, x, x, flex-end);
-		margin-right: 15px;
+		@include flex-dir-al-jus(x, x, x, flex-start);
 		background-color: var(--colTer);
 	}
 	&__cont-nav {
@@ -93,31 +99,33 @@
 		@include flex-dir-al-jus(flex, row, x, flex-end);
 
 		&__cont-titulo {
-			//va con nav
-			width: 30;
+			margin-right: 0px;
 		}
-		&__titulo-ada {
-			font-size: 2.4rem;
+
+		&__logo-ada {
 			h1 {
 				font-size: 2.4rem;
 			}
 		}
 
-		&__cont-der {
+		&__cont-modo-hamb {
 			width: 100%;
+			font-size: 1.2rem;
 		}
-		&__cont-menu-hamb {
+
+		&__cont-hamb {
 			display: none;
+			padding-right: 0px;
 		}
 
 		&__nav {
-			width: 70%;
+			width: auto;
 			background-color: var(--colSec);
 			@include flex-dir-al-jus(flex, row, x, flex-end);
+			padding-right: 10px;
 		}
 		&__cont-nav {
 			@include flex-dir-al-jus(flex, row, center, flex-end);
-			font-size: 1.2rem;
 		}
 	}
 }

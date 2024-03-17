@@ -32,7 +32,7 @@ body {
   font-weight: 500;
   font-style: italic;
 }
-.lora-i-n, .balance__filtros-titulo h2, .balance__cont-balance h2, .section-categ div .categ-tit-img h2, main .cont-main .section-x div h2, .tamanio-frase, .footer__h3, .header__cont-nav, .header__titulo-ada h1 {
+.lora-i-n, .balance__filtros-titulo h2, .balance__cont-balance h2, .section-categ div .categ-tit-img h2, main .cont-main .section-x div h2, .tamanio-frase, .footer__h3, .header__cont-nav, .header__logo-ada h1 {
   font-family: "Lora";
   font-style: italic;
   font-weight: normal;
@@ -80,6 +80,14 @@ body {
 /*-------------------------- << MIXINS  >> ---------------------------*/
 /*====================================================================*/
 /*-------------------------  << HEADER  >> ---------------------------*/
+.header-ocultar {
+  display: none;
+}
+
+.header-mostrar {
+  display: flex;
+}
+
 .header {
   width: 100%;
   height: auto;
@@ -90,25 +98,26 @@ body {
 .header__cont-titulo {
   color: var(--colFuente);
   width: 100%;
-  padding-left: 15px;
   display: flex;
   flex-direction: row;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-.header__titulo-ada {
-  width: 70%;
+.header__logo-ada {
+  width: 50%;
   height: 80px;
   font-size: 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.header__titulo-ada h1 {
+.header__logo-ada h1 {
   margin-left: 10px;
   font-size: 2rem;
   color: var(--colTituloPpal);
 }
-.header__cont-der {
-  width: 30%;
+.header__cont-modo-hamb {
+  width: 50%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -123,16 +132,16 @@ body {
   display: flex;
   justify-content: center;
   border: none;
+  font-size: 1.2rem;
   cursor: pointer;
 }
-.header__cont-menu-hamb {
-  padding-right: 10px;
+.header__cont-hamb {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
 }
-.header__menu-hamb {
+.header__hamb {
   margin: 0px 5px;
   padding: 5px;
   border-radius: 5px;
@@ -143,7 +152,7 @@ body {
   border: none;
   cursor: pointer;
 }
-.header__menu-hamb.ocultar {
+.header__hamb.header-ocultar {
   display: none;
 }
 .header__modo:hover, .header__menu-hamb:hover {
@@ -151,9 +160,7 @@ body {
 }
 .header__nav {
   width: 100%;
-  display: none;
-  justify-content: flex-end;
-  margin-right: 15px;
+  justify-content: flex-start;
   background-color: var(--colTer);
 }
 .header__cont-nav {
@@ -191,33 +198,32 @@ body {
     justify-content: flex-end;
   }
   .header__cont-titulo {
-    width: 30;
+    margin-right: 0px;
   }
-  .header__titulo-ada {
+  .header__logo-ada h1 {
     font-size: 2.4rem;
   }
-  .header__titulo-ada h1 {
-    font-size: 2.4rem;
-  }
-  .header__cont-der {
+  .header__cont-modo-hamb {
     width: 100%;
+    font-size: 1.2rem;
   }
-  .header__cont-menu-hamb {
+  .header__cont-hamb {
     display: none;
+    padding-right: 0px;
   }
   .header__nav {
-    width: 70%;
+    width: auto;
     background-color: var(--colSec);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    padding-right: 10px;
   }
   .header__cont-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    font-size: 1.2rem;
   }
 }
 /*====================================================================*/
@@ -307,7 +313,7 @@ main .cont-main .section-x {
   align-items: center;
   justify-content: center;
   margin: 10px auto;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
   background-color: var(--colTer);
   box-shadow: 8px 8px 5px -8px rgb(164, 163, 163);
@@ -334,7 +340,7 @@ main .cont-main .section-x div .img-reporte {
   align-items: center;
   justify-content: center;
   margin: 10px auto;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
   background-color: var(--colTer);
   box-shadow: 8px 8px 5px -8px rgb(164, 163, 163);
@@ -501,26 +507,24 @@ main .cont-main .section-x div .img-reporte {
 
 .balance {
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 10px auto;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: var(--colTer);
-  box-shadow: 8px 8px 5px -8px rgb(164, 163, 163);
-  width: 90%;
-  height: 96%;
 }
 .balance__cont-bal-fil {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
 .balance__cont-balance {
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: var(--colTer);
+  box-shadow: 8px 8px 5px -8px rgb(164, 163, 163);
+  width: 95%;
+  height: 96%;
   display: flex;
   flex-direction: column;
-  margin: 4px;
 }
 .balance__cont-balance h2 {
   font-weight: bold;
@@ -543,7 +547,13 @@ main .cont-main .section-x div .img-reporte {
   width: 69%;
 }
 .balance__cont-filtros {
-  margin: 4px;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: var(--colTer);
+  box-shadow: 8px 8px 5px -8px rgb(164, 163, 163);
+  width: 95%;
+  height: 96%;
 }
 .balance__filtros-titulo {
   display: flex;
@@ -562,38 +572,56 @@ main .cont-main .section-x div .img-reporte {
   justify-content: flex-end;
   width: 58%;
   font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--colFuente);
+  cursor: pointer;
+  gap: 5px;
 }
-.balance .cont-sin-con-oper {
-  height: auto;
-  margin: 4px;
-  padding: 5px;
+.balance__cont-sin-con-oper {
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: var(--colTer);
+  box-shadow: 8px 8px 5px -8px rgb(164, 163, 163);
+  width: 95%;
+  height: 96%;
+}
+.balance__cont-sin-con-oper div {
+  display: flex;
+  flex-direction: column;
+}
+.balance .img-js {
+  width: 60%;
 }
 
 @media (min-width: 768px) {
-  .section-balance div {
+  .balance {
     display: flex;
     flex-direction: row;
     width: 100%;
     max-width: 1200px;
   }
-  .section-balance div .cont-bal-fil {
-    display: flex;
-    width: 27%;
+  .balance.ocultar {
+    display: none;
   }
-  .section-balance div .cont-bal-fil .cont-bal {
+  .balance__cont-bal-fil {
+    display: flex;
+    width: 40%;
+  }
+  .balance__cont-bal-fil .cont-bal {
     width: 100%;
   }
-  .section-balance div .cont-bal-fil .cont-bal h2 {
+  .balance__cont-bal-fil .cont-bal h2 {
     font-weight: bold;
     font-size: 0.8rem;
   }
-  .section-balance div .cont-bal-fil .cont-bal .cont-bal__numeros {
+  .balance__cont-bal-fil .cont-bal .cont-bal__numeros {
     font-weight: 1rem;
   }
-  .section-balance div .cont-bal-fil .con-fil {
+  .balance__cont-bal-fil .con-fil {
     width: 100%;
   }
-  .section-balance div .cont-sin-con-oper {
+  .balance .cont-sin-con-oper {
     width: 68%;
   }
 }
