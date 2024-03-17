@@ -1,116 +1,123 @@
-header {
+/*====================================================================*/
+/*-------------------------  << HEADER  >> ---------------------------*/
+.header {
 	width: 100%;
 	height: auto;
 	background-color: var(--colSec);
 
 	@include flex-dir-al-jus(flex, column, x, x);
 
-	.cont-titulo {
+	&__cont-titulo {
 		color: var(--colFuente);
 		width: 100%;
 		padding-left: 15px;
 		@include flex-dir-al-jus(flex, row, x, x);
+	}
+	&__titulo-ada {
+		width: 70%;
+		height: 80px;
+		font-size: 2rem;
+		@include flex-dir-al-jus(flex, row, center, x);
 
-		.titulo-ada {
-			width: 50%;
-			height: 80px;
+		h1 {
+			margin-left: 10px;
 			font-size: 2rem;
-			@include flex-dir-al-jus(flex, row, center, x);
-
-			h1 {
-				margin-left: 10px;
-				font-size: 2rem;
-
-				@extend .lora-i-n; //fonts.scss
-				color: var(--colTituloPpal);
-			}
-		}
-		.btn-menu-hamb {
-			width: 50%;
-			padding-right: 10px;
-			@include flex-dir-al-jus(flex, row, center, flex-end);
-			border: none;
-
-			&__abrir {
-				@include boton(var(--colPpal), 35px, true);
-				cursor: pointer;
-				&.ocultar {
-					display: none;
-				}
-			}
-			&__cerrar {
-				@include boton(var(--colPpal), 35px, true);
-				cursor: pointer;
-				&.ocultar {
-					display: none;
-				}
-			}
+			@extend .lora-i-n; //fonts.scss
+			color: var(--colTituloPpal);
 		}
 	}
 
-	nav {
+	&__cont-der {
+		width: 30%;
+		@include flex-dir-al-jus(flex, row, center, flex-end);
+	}
+	&__modo {
+		@include boton(var(--colSec), 35px, false);
+		cursor: pointer;
+	}
+
+	&__cont-menu-hamb {
+		padding-right: 10px;
+		@include flex-dir-al-jus(flex, row, center, flex-end);
+	}
+
+	&__menu-hamb {
+		@include boton(var(--colSec), 35px, false);
+		cursor: pointer;
+		&.ocultar {
+			display: none;
+		}
+	}
+
+	&__modo:hover,
+	&__menu-hamb:hover {
+		background-color: var(--colHoverBtn);
+	}
+
+	&__nav {
 		width: 100%;
 		@include flex-dir-al-jus(none, x, x, flex-end);
-		background-color: rgb(227, 240, 252);
-		opacity: 0.9;
+		margin-right: 15px;
+		background-color: var(--colTer);
+	}
+	&__cont-nav {
+		width: 100%;
+		@include flex-dir-al-jus(flex, column, flex-start, x);
+		@extend .lora-i-n; //fonts.scss
+	}
+	&__nav-a {
+		@include flex-dir-al-jus(flex, row, center, x);
+		text-decoration: none;
+		color: var(--colFuente);
+		font-size: 1rem;
+		margin-left: 10px;
 		padding: 5px;
+		cursor: pointer;
+	}
+	&__nav-a-span {
+		padding-right: 5px;
+		font-size: 1rem;
+	}
 
-		.nav-container {
-			gap: 5px;
-			width: 100%;
-			@include flex-dir-al-jus(flex, column, center, x);
-			@extend .lora-i-n; //fonts.scss
-			a {
-				@include flex-dir-al-jus(flex, row, center, x);
-				@include boton(var(--colPpal), 105px, true);
-				text-decoration: none;
-				color: var(--colFuente);
-				font-size: 0.9rem;
-				span {
-					padding-right: 5px;
-				}
-			}
-
-			a:last-child {
-				@include boton(var(--colPpal), 40px, true);
-				padding-right: 0px;
-				height: 33px;
-			}
-			a:hover {
-				background-color: var(--colHoverBtn);
-			}
-			a:last-child:hover {
-				background-color: var(--colPpal);
-			}
-		}
+	.header__nav-a:hover {
+		font-weight: bold;
+	}
+	.header__nav-a:hover .header__nav-a-span {
+		font-weight: bold;
 	}
 }
+
 //$md: "768px" ver en varibales.scss;
 @media (min-width: #{$md}px) {
-	header {
+	.header {
 		@include flex-dir-al-jus(flex, row, x, flex-end);
-		.cont-titulo {
-			width: 30%;
 
-			.titulo-ada {
+		&__cont-titulo {
+			//va con nav
+			width: 30;
+		}
+		&__titulo-ada {
+			font-size: 2.4rem;
+			h1 {
 				font-size: 2.4rem;
-				h1 {
-					font-size: 2.4rem;
-				}
-			}
-			.btn-menu-hamb {
-				display: none;
 			}
 		}
 
-		nav {
+		&__cont-der {
+			width: 100%;
+		}
+		&__cont-menu-hamb {
+			display: none;
+		}
+
+		&__nav {
 			width: 70%;
 			background-color: var(--colSec);
 			@include flex-dir-al-jus(flex, row, x, flex-end);
-
-			.nav-container {
-				@include flex-dir-al-jus(flex, row, x, flex-end);
-			}
+		}
+		&__cont-nav {
+			@include flex-dir-al-jus(flex, row, center, flex-end);
+			font-size: 1.2rem;
 		}
 	}
 }

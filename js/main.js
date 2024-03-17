@@ -1,8 +1,8 @@
 /* Por motivos de que SASS no trabaja correctamente en poner y sacar
 la clase "ocultar", es que debo agregar esta función. 
+md=768
 */
 let md_px = getComputedStyle(document.documentElement).getPropertyValue("--md");
-let tmnSM = getComputedStyle(document.documentElement).getPropertyValue("sm");
 
 window.visualViewport.addEventListener("resize", () => {
 	if (window.innerWidth >= `${md_px}`) {
@@ -21,7 +21,8 @@ const cerrar = document.getElementById("cerrar");
 
 function cerrarNav() {
 	/* Este If es un parche porque con SASS no funciona bien el poner y sacar clases*/
-	if (window.innerWidth <= `${md_px}`) {
+	if (window.innerWidth < `${md_px}`) {
+		console.log(window.innerWidth);
 		nav_header.classList.remove("mostrar");
 		nav_header.classList.add("ocultar");
 		cerrar.classList.add("ocultar");
