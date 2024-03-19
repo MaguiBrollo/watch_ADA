@@ -1,4 +1,9 @@
 // ============= MENÚ BALANCE ===============
+
+.balance-ocultar {
+	display: none;
+}
+//------------------------------
 .balance {
 	@include flex-dir-al-jus(x, column, x, x);
 
@@ -8,99 +13,108 @@
 		height: 100%;
 	}
 
+	//------------- balance números
 	&__cont-balance {
 		@include caja(var(--colTer), 95%);
-		
 		@include flex-dir-al-jus(flex, column, x, x);
-
-		h2 {
-			font-weight: bold;
-			font-size: 1.4rem;
-			margin-bottom: 15px;
-			@extend .lora-i-n; //fonts.scss
-		}
 	}
+
+	&__h2 {
+		@extend .lora-i-n; //fonts.scss
+		font-size: 1.8rem;
+	}
+
 	&__balance-numeros {
+		margin-top: 15px;
 		font-weight: 0.8rem;
 
-		div {
+		&--cont {
 			@include flex-dir-al-jus(flex, row, x, space-between);
 			margin-bottom: 5px;
-			div {
-				@include flex-dir-al-jus(flex, x, center, flex-end);
-				width: 69%;
-			}
 		}
 	}
 
+	//--------------- filtros
 	&__cont-filtros {
 		@include caja(var(--colTer), 95%);
 	}
 
 	&__filtros-titulo {
-		@include flex-dir-al-jus(flex, row, x, space-between);
+		@include flex-dir-al-jus(flex, row, center, space-between);
 		margin-bottom: 15px;
-		h2 {
-			font-weight: bold;
-			font-size: 1.4rem;
-			@extend .lora-i-n; //fonts.scss
-		}
-		a {
-			@include flex-dir-al-jus(flex, row, center, flex-end);
-			width: 58%;
-			font-size: 0.9rem;
-			text-decoration: none;
-			color: var(--colFuente);
-			cursor: pointer;
-			gap: 5px;
+	}
+	&__ocultar-filtros {
+		@include flex-dir-al-jus(flex, row, center, flex-end);
+		width: 58%;
+		font-size: 0.8rem;
+		text-decoration: none;
+		color: var(--colFuente);
+		cursor: pointer;
+		gap: 5px;
+	}
+
+	&__cont-filtro {
+		margin-top: 15px;
+	}
+
+	&__filtro-cu {
+		// rounded-[3px] bg-zinc-100 dark:bg-gray-400 flex items-center h-[30px]
+		height: 30px;
+		border: 1px solid var(--colPpal);
+		border-radius: 5px;
+		width: 100%;
+		cursor: pointer;
+
+		&--fecha {
+			@extend .montserrat-n-n; //fonts.scss
 		}
 	}
 
+	//----------------- operaciones
 	&__cont-sin-con-oper {
 		@include caja(var(--colTer), 95%);
-		div {
-			@include flex-dir-al-jus(flex, column, x, x);
-		}
+		min-height: 562px;
 	}
 
-	.img-js {
+	&__titulo {
+		@include flex-dir-al-jus(flex, x, center, space-between);
+	}
+	&__cont-sin-oper {
+		@include flex-dir-al-jus(flex, column, center, x);
+	}
+	&__img {
+		margin: 15px;
 		width: 60%;
+	}
+	&__p-sin-oper {
+		color: var(--colRojo);
+		@extend .lora-i-n; //fonts.scss
+		font-size: 1rem;
+	}
+
+	&__encabezado-oper {
+		@include flex-dir-al-jus(flex, x, x, space-between);
 	}
 }
 
 //--------------------------------------------
 //$md: "768px" ver en varibales.scss;
-@media (min-width: #{$md}px) {
+@media (min-width: #{$lg}px) {
 	.balance {
 		@include flex-dir-al-jus(flex, row, x, x);
 		width: 100%;
 		max-width: 1200px;
-		&.ocultar{
+		&.ocultar {
 			display: none;
 		}
-		
+
 		&__cont-bal-fil {
 			@include flex-dir-al-jus(flex, x, x, x);
 			width: 40%;
-
-			.cont-bal {
-				width: 100%;
-
-				h2 {
-					font-weight: bold;
-					font-size: 0.8rem;
-				}
-				.cont-bal__numeros {
-					font-weight: 1rem;
-				}
-			}
-			.con-fil {
-				width: 100%;
-			}
 		}
 
 		.cont-sin-con-oper {
-			width: 68%;
+			width: 60%;
 		}
 	}
 }

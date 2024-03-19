@@ -3,7 +3,7 @@
 
 $sm: 576; // => @media (min-width: 576px) { ... }
 $md: 768; // => @media (min-width: 768px) { ... }
-$lg: 1024; // => @media (min-width: 1440px) { ... }
+$lg: 1024; // => @media (min-width: 1024px) { ... }
 
 :root {
 	/* Modo claro*/
@@ -21,6 +21,7 @@ $lg: 1024; // => @media (min-width: 1440px) { ... }
 
 	--transition: color 0.1s, background-color 0.2s ease-in-out;
 	--md: #{$md};
+	--lg: #{$lg};
 }
 
 :root[data-theme-color="dark"] {

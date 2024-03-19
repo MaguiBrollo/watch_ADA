@@ -12,11 +12,12 @@
 			@include flex-dir-al-jus(flex, row, x, x);
 			h2 {
 				@extend .lora-i-n; //fonts.scss
-				font-size: 2rem;
+				font-size: 1.8rem;
 				width: 85%;
 			}
 			img {
 				width: 10%;
+				margin-bottom: 5px;
 			}
 		}
 

@@ -32,13 +32,13 @@ body {
   font-weight: 500;
   font-style: italic;
 }
-.lora-i-n, .balance__filtros-titulo h2, .balance__cont-balance h2, .section-categ div .categ-tit-img h2, main .cont-main .section-x div h2, .tamanio-frase, .footer__h3, .header__cont-nav, .header__logo-ada h1 {
+.lora-i-n, .balance__p-sin-oper, .balance__h2, .section-categ div .categ-tit-img h2, main .cont-main .section-x div h2, .tamanio-frase, .footer__h3, .header__cont-nav, .header__logo-ada h1 {
   font-family: "Lora";
   font-style: italic;
   font-weight: normal;
 }
 
-.montserrat-n-n, body {
+.montserrat-n-n, .balance__filtro-cu--fecha, body {
   font-family: "Montserrat";
   font-weight: 500;
   font-style: normal;
@@ -60,6 +60,7 @@ body {
   color-scheme: light; /*color por defecto de win, para barras de scroll*/
   --transition: color 0.1s, background-color 0.2s ease-in-out;
   --md: 768;
+  --lg: 1024;
 }
 
 :root[data-theme-color=dark] {
@@ -205,7 +206,6 @@ body {
   }
   .header__cont-modo-hamb {
     width: 100%;
-    font-size: 1.2rem;
   }
   .header__cont-hamb {
     display: none;
@@ -224,6 +224,9 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+  }
+  .header__span-modo, .header__nav-a, .header__nav-a-span {
+    font-size: 1.2rem;
   }
 }
 /*====================================================================*/
@@ -360,11 +363,12 @@ main .cont-main .section-x div .img-reporte {
   flex-direction: row;
 }
 .section-categ div .categ-tit-img h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   width: 85%;
 }
 .section-categ div .categ-tit-img img {
   width: 10%;
+  margin-bottom: 5px;
 }
 .section-categ div .categ-form-crud {
   display: flex;
@@ -505,6 +509,10 @@ main .cont-main .section-x div .img-reporte {
   }
 }
 
+.balance-ocultar {
+  display: none;
+}
+
 .balance {
   flex-direction: column;
 }
@@ -526,25 +534,18 @@ main .cont-main .section-x div .img-reporte {
   display: flex;
   flex-direction: column;
 }
-.balance__cont-balance h2 {
-  font-weight: bold;
-  font-size: 1.4rem;
-  margin-bottom: 15px;
+.balance__h2 {
+  font-size: 1.8rem;
 }
 .balance__balance-numeros {
+  margin-top: 15px;
   font-weight: 0.8rem;
 }
-.balance__balance-numeros div {
+.balance__balance-numeros--cont {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 5px;
-}
-.balance__balance-numeros div div {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 69%;
 }
 .balance__cont-filtros {
   margin: 10px auto;
@@ -558,24 +559,31 @@ main .cont-main .section-x div .img-reporte {
 .balance__filtros-titulo {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 15px;
 }
-.balance__filtros-titulo h2 {
-  font-weight: bold;
-  font-size: 1.4rem;
-}
-.balance__filtros-titulo a {
+.balance__ocultar-filtros {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
   width: 58%;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-decoration: none;
   color: var(--colFuente);
   cursor: pointer;
   gap: 5px;
+}
+.balance__cont-filtro {
+  margin-top: 15px;
+}
+.balance__filtro-cu {
+  height: 30px;
+  border: 1px solid var(--colPpal);
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
 }
 .balance__cont-sin-con-oper {
   margin: 10px auto;
@@ -585,16 +593,32 @@ main .cont-main .section-x div .img-reporte {
   box-shadow: 8px 8px 5px -8px rgb(164, 163, 163);
   width: 95%;
   height: 96%;
+  min-height: 562px;
 }
-.balance__cont-sin-con-oper div {
+.balance__titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.balance__cont-sin-oper {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-.balance .img-js {
+.balance__img {
+  margin: 15px;
   width: 60%;
 }
+.balance__p-sin-oper {
+  color: var(--colRojo);
+  font-size: 1rem;
+}
+.balance__encabezado-oper {
+  display: flex;
+  justify-content: space-between;
+}
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .balance {
     display: flex;
     flex-direction: row;
@@ -608,21 +632,8 @@ main .cont-main .section-x div .img-reporte {
     display: flex;
     width: 40%;
   }
-  .balance__cont-bal-fil .cont-bal {
-    width: 100%;
-  }
-  .balance__cont-bal-fil .cont-bal h2 {
-    font-weight: bold;
-    font-size: 0.8rem;
-  }
-  .balance__cont-bal-fil .cont-bal .cont-bal__numeros {
-    font-weight: 1rem;
-  }
-  .balance__cont-bal-fil .con-fil {
-    width: 100%;
-  }
   .balance .cont-sin-con-oper {
-    width: 68%;
+    width: 60%;
   }
 }
 

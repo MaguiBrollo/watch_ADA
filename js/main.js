@@ -65,6 +65,7 @@ menuInicio.addEventListener("click", () => {
 menuBalance.addEventListener("click", () => {
 	cerrarNav();
 	mostrar(contenedor_menuBalance);
+	funcionesBalance(); // ver balance.js
 });
 
 menuCategorias.addEventListener("click", () => {
@@ -76,7 +77,7 @@ menuCategorias.addEventListener("click", () => {
 menuReportes.addEventListener("click", () => {
 	cerrarNav();
 	mostrar(contenedor_menuReportes);
-	//mostrarReportes(); /* ver en scriptReportes.js */
+	
 });
 
 /* ------------------------------------------------------------------------------------------------ */
@@ -97,12 +98,12 @@ btn_claro_oscuro.addEventListener("click", () => {
 		(!("theme" in localStorage) &&
 			document.documentElement.getAttribute("data-theme-color") === "dark")
 	) {
-		btn_claro_oscuro.innerHTML = `<span class="material-symbols-outlined"> dark_mode </span>`; // pone luna
+		btn_claro_oscuro.innerHTML = `<span class="header__span-modo material-symbols-outlined"> dark_mode </span>`; // pone luna
 		document.documentElement.setAttribute("data-theme-color", "light");
 		localStorage.theme = "light"; //PASAR A claro
 		ponerSacarGris(0);
 	} else {
-		btn_claro_oscuro.innerHTML = `<span class="material-symbols-outlined">light_mode</span>`; //poner SOL
+		btn_claro_oscuro.innerHTML = `<span class="header__span-modo material-symbols-outlined">light_mode</span>`; //poner SOL
 		document.documentElement.setAttribute("data-theme-color", "dark");
 		localStorage.theme = "dark"; //pasar a oscuro
 		ponerSacarGris(100);
@@ -115,11 +116,11 @@ function modoClaroOscuro() {
 		(!("theme" in localStorage) &&
 			document.documentElement.getAttribute("data-theme-color") === "dark")
 	) {
-		btn_claro_oscuro.innerHTML = `<span class="material-symbols-outlined">light_mode</span>`; //pone SOL
+		btn_claro_oscuro.innerHTML = `<span class="header__span-modo material-symbols-outlined">light_mode</span>`; //pone SOL
 		document.documentElement.setAttribute("data-theme-color", "dark"); //veeeer
 		ponerSacarGris(100);
 	} else {
-		btn_claro_oscuro.innerHTML = `<span class="material-symbols-outlined"> dark_mode </span>`; //pone LUNA
+		btn_claro_oscuro.innerHTML = `<span class="header__span-modo material-symbols-outlined"> dark_mode </span>`; //pone LUNA
 		document.documentElement.setAttribute("data-theme-color", "light"); //veeerr
 		ponerSacarGris(0);
 	}
