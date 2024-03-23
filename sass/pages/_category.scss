@@ -1,8 +1,9 @@
-/*====================================================================*/
-/*------------------ << Menú Categorías  >> -------------------------*/
+/*==========================================================*/
+/*--------------- << Menú Categorías  >> -------------------*/
 .section-categ {
 	@include flex-dir-al-jus(x, column, center, center);
-	@include caja(var(--colTer), 90%);
+	@include caja(var(--colTer), 90%, auto);
+	max-width: var(--maxAncho);
 	div {
 		font-size: 0.8rem;
 		@include flex-dir-al-jus(flex, column,center,center);

@@ -22,6 +22,7 @@ $lg: 1024; // => @media (min-width: 1024px) { ... }
 	--transition: color 0.1s, background-color 0.2s ease-in-out;
 	--md: #{$md};
 	--lg: #{$lg};
+	--maxAncho : 1000px;
 }
 
 :root[data-theme-color="dark"] {

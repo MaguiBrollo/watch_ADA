@@ -1,6 +1,5 @@
-// ________________________________________________
-// Función que inicializa las fechas en los filtros
-// ------------------------------------------------
+// ===================================================
+// Inicializa fechas en los filtros y Nueva operación
 function inicializarFechaInput(id_del_input, que_hago) {
 	var fecha;
 	if (que_hago === "restarMes") {
@@ -26,11 +25,11 @@ function inicializarFechaInput(id_del_input, que_hago) {
 function inicializarFechas() {
 	inicializarFechaInput("filtro-fecha-desde", "restarMes");
 	inicializarFechaInput("filtro-fecha-hasta", "noRestarMes");
+	inicializarFechaInput("fecha-oper-input", "noRestarMes");
 }
 
-// ___________________________________
-// Evento que oculta todos los filtros
-// -----------------------------------
+// ===================================================
+// Muestra/Oculta filtros
 const ocultar_filtros = document.getElementById("ocultar-filtros");
 const contenedor_filtros = document.getElementById("contenedor-filtros");
 
@@ -43,8 +42,32 @@ ocultar_filtros.addEventListener("click", () => {
 	}
 });
 
-/* ======================================================== */
-/* Funciones que deben ejecutarse al cargar menú Balance */
+// ===================================================
+// Muestra Nueva Operación
+const btn_nueva_oper = document.getElementById("btn-nueva-oper");
+const cont_nueva_oper = document.getElementById("cont-nueva-oper");
+//const contenedor_menuBalance = document.getElementById("cont-menu-balance");
+
+btn_nueva_oper.addEventListener("click", () => {
+	contenedor_menuBalance.classList.add("ocultar"); //viene de main.js
+	cont_nueva_oper.classList.remove("ocultar");
+});
+
+const btn_agregar_oper = document.getElementById("btn-agregar-oper");
+const btn_cancelar_oper = document.getElementById("btn-cancelar-oper");
+
+btn_agregar_oper.addEventListener("click", ()=>{
+	contenedor_menuBalance.classList.remove("ocultar"); //viene de main.js
+	cont_nueva_oper.classList.add("ocultar");
+})
+
+btn_cancelar_oper.addEventListener("click", () => {
+	contenedor_menuBalance.classList.remove("ocultar"); //viene de main.js
+	cont_nueva_oper.classList.add("ocultar");
+});
+
+// ======================================================== //
+// Funciones que deben ejecutarse al cargar menú Balance
 //(desde main.js)
 function funcionesBalance() {
 	inicializarFechas();

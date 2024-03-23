@@ -10,9 +10,6 @@ body {
 .ocultar {
 	display: none;
 }
-.mostrar {
-	display: flex;
-}
 
 .tamanio-frase {
 	font-size: clamp(1rem, -0.0698rem + 3.0387vw, 1.875rem);
@@ -20,31 +17,44 @@ body {
 	@extend .lora-i-n; //_fonts.scss
 }
 
-main {
+/*==========================================================*/
+// ============================= MAIN =========0============
+.main {
 	min-height: calc(100% - 80px - 80px);
-	display: flex;
-	justify-content: center;
+	@include flex-dir-al-jus(flex, x, x, center);
 
-	.cont-main {
+	/*------------------ << Menú Inicio >> --------------------*/
+	.inicio {
 		color: var(--colFuente);
-		width: 100%;
-		max-width: 992px;
+		max-width: var(--maxAncho);
+		@include flex-dir-al-jus(flex, column, center, center);
+		@include caja(var(--colTer), 90%, auto);
 
-		.section-x {
-			@include flex-dir-al-jus(x, column, center, center);
-			@include caja(var(--colTer), 90%);
-			div {
-				@include flex-dir-al-jus(flex, column, center, center);
-				h2 {
-					@extend .lora-i-n; //fonts.scss
-				}
-				.img-inicio {
-					width: 80%;
-				}
-				
-				.img-reporte {
-					width: 70%;
-				}
+		&.ocultar {
+			display: none;
+		}
+
+		&__cont-img-p {
+			@include flex-dir-al-jus(flex, column, center, center);
+		}
+		&__img {
+			width: 70%;
+		}
+	}
+
+	.reportes {
+		color: var(--colFuente);
+		max-width: var(--maxAncho);
+		@include flex-dir-al-jus(x, column, center, center);
+		@include caja(var(--colTer), 90%, auto);
+		div {
+			@include flex-dir-al-jus(flex, column, center, center);
+			h2 {
+				@extend .lora-i-n; //fonts.scss
+			}
+
+			.img-reporte {
+				width: 70%;
 			}
 		}
 	}
