@@ -12,7 +12,7 @@
 	&__cont-bal-fil {
 		@include flex-dir-al-jus(flex, column, center, x);
 		width: 100%;
-		height: 100%;
+		height: auto;
 	}
 
 	//------------- balance números
@@ -23,16 +23,16 @@
 
 	&__h2 {
 		@extend .lora-i-n; //fonts.scss
-		font-size: 1.8rem;
+		font-size: 1.7rem;
 	}
 
 	&__balance-numeros {
-		margin-top: 15px;
-		font-weight: 0.8rem;
+		//margin-top: 15px;
+		//font-weight: 0.8rem;
 
 		&--cont {
 			@include flex-dir-al-jus(flex, row, x, space-between);
-			margin-bottom: 5px;
+			margin-top: 20px;
 		}
 	}
 
@@ -78,16 +78,17 @@
 	}
 
 	&__btn-nueva-oper {
-		@include boton(var(--colSec), 160px, false);
-		@include flex-dir-al-jus(x, x, center, space-between);
+		@include boton(var(--colSec), 150px, false);
+		@include flex-dir-al-jus(x, x, center, x);
 		@extend .montserrat-n-n; //fonts.scss
+		font-size: 0.8rem;
 		cursor: pointer;
 	}
 
 	//sin operaciones
 	&__cont-sin-oper {
 		@include flex-dir-al-jus(flex, column, center, center);
-		height: 100%;
+		height: 500px;
 	}
 	&__img {
 		margin: 15px;
@@ -96,9 +97,8 @@
 	}
 	&__p-sin-oper {
 		color: var(--colRojo);
+		text-align: center;
 		@extend .lora-i-n; //fonts.scss
-		font-size: 1.2rem;
-		align-items: center;
 	}
 
 	//CON operaciones
@@ -118,6 +118,10 @@
 			display: none;
 		}
 
+		&__h2 {
+			font-size: 1.8rem;
+		}
+
 		&__cont-bal-fil {
 			@include flex-dir-al-jus(flex, x, x, x);
 			width: 40%;
@@ -125,6 +129,9 @@
 
 		.cont-sin-con-oper {
 			width: 60%;
+		}
+		&__cont-sin-oper {
+			height: 92%;
 		}
 	}
 }
@@ -196,6 +203,6 @@
 //$md: "768px" ver en varibales.scss;
 @media (min-width: #{$lg}px) {
 	.nueva-oper {
-		@include caja(var(--colTer), 75%, auto);
+		@include caja(var(--colTer), 90%, auto);
 	}
 }
